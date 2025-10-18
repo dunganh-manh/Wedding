@@ -51,6 +51,21 @@
     </div>
   </section>
 
+  <section id="rsvp" class="fade-section">
+    <h2>Xác nhận tham dự</h2>
+    <form id="rsvp-form">
+      <input type="text" id="guestName" name="name" placeholder="Họ và tên" required>
+      <select id="guestStatus" name="status" required>
+        <option value="">Chọn trạng thái</option>
+        <option value="yes">Tôi sẽ tham dự</option>
+        <option value="no">Rất tiếc, tôi không thể</option>
+      </select>
+      <textarea id="guestMessage" name="message" placeholder="Gửi lời chúc..." rows="3"></textarea>
+      <button type="submit">Gửi</button>
+    </form>
+    <p id="form-msg" class="form-msg"></p>
+  </section>
+
   <section id="map" class="fade-section">
     <h2>Quãng đường di chuyển</h2>
     <div class="map-container">
