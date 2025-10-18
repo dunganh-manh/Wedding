@@ -217,19 +217,18 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
 }
 
 /* Gradient hiệu ứng champagne */
-.signature-svg defs,
-.invite-heart svg defs {
-  display: none; /* ẩn nếu có định nghĩa trùng */
+.signature-svg text {
+  font-family: "Great Vibes", cursive;
+  font-size: 42px;               /* tăng kích thước để nổi hơn */
+  fill: none;
+  stroke: url(#champagneGradient);
+  stroke-width: 2.2px;           /* tăng độ dày nét */
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  filter: drop-shadow(0 0 6px rgba(191,166,112,0.5)); /* ánh sáng mềm quanh chữ */
+  animation: handwriting 4s ease forwards, shineMove 6s linear infinite 4s;
 }
-svg defs linearGradient stop:first-child {
-  stop-color: #bfa670;
-}
-svg defs linearGradient stop:nth-child(2) {
-  stop-color: #f3e7c6;
-}
-svg defs linearGradient stop:last-child {
-  stop-color: #d9b95b;
-}
+
 
 /* Đường cong trái tim */
 .invite-heart svg {
