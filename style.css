@@ -337,3 +337,178 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   transform: translateY(0);
   filter: blur(0);
 }
+#invite {
+  background-color: #fceef3;
+  color: #3a2e2e;
+  border: 2px solid #d9b95b;
+  border-radius: 28px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+#invite h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #4a3838;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 50px;
+  letter-spacing: 1.2px;
+}
+
+.invite-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.invite-side {
+  flex: 1;
+  min-width: 280px;
+}
+
+.invite-side h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #5a4545;
+  margin-bottom: 10px;
+}
+
+.invite-side p {
+  font-size: 1rem;
+  color: #6b5858;
+  margin-top: 8px;
+}
+
+/* SVG chữ ký */
+.signature-svg {
+  width: 320px;
+  height: 90px;
+  margin: 0 auto;
+  display: block;
+}
+.signature-svg text {
+  font-family: "Great Vibes", cursive;
+  font-size: 46px;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: handwriting 3.8s ease forwards;
+  filter: drop-shadow(0 0 6px rgba(217,185,91,0.5));
+}
+
+/* Trái tim */
+.invite-heart svg {
+  width: 100px;
+  height: 50px;
+}
+.invite-heart path {
+  stroke: #caa85e;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+.heart-shape {
+  fill: #e7d3a2;
+  animation: heartPulse 2s infinite;
+}
+
+/* Ngày và cảm ơn */
+.invite-date p:first-child {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #4a3737;
+}
+.invite-date p:last-child {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #6b5858;
+}
+.invite-thanks {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.invite-thanks p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a3737;
+}
+
+/* Hiệu ứng animation */
+@keyframes handwriting {
+  0% { stroke-dashoffset: 900; opacity: 0.4; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .invite-wrapper {
+    gap: 50px;
+  }
+  .signature-svg {
+    width: 280px;
+    height: 80px;
+  }
+  .signature-svg text {
+    font-size: 40px;
+  }
+}
+@media (max-width: 600px) {
+  #invite {
+    padding: 40px 25px;
+  }
+  .invite-wrapper {
+    flex-direction: column;
+  }
+  .invite-heart svg {
+    width: 70px;
+    height: 35px;
+    margin: 20px auto;
+  }
+  .signature-svg text {
+    font-size: 38px;
+  }
+}
+/* Tiêu đề LỄ THÀNH HÔN */
+#invite h2 {
+  font-family: "Playfair Display SC", serif;
+  font-size: 2.4rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #4a3838;
+  margin-bottom: 50px;
+}
+
+/* Chữ ký vàng champagne + hiệu ứng shine */
+.signature-svg {
+  width: 340px;
+  height: 90px;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+}
+.signature-svg text {
+  font-family: "Great Vibes", cursive;
+  font-size: 48px;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: handwriting 3.8s ease forwards;
+  filter: drop-shadow(0 0 6px rgba(217,185,91,0.6));
+}
+
+/* Shine animation (ánh sáng quét) */
+@keyframes handwriting {
+  0% { stroke-dashoffset: 900; opacity: 0.4; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
