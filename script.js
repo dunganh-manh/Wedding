@@ -145,3 +145,4 @@ if (giftBtn && qrPopup) {
     }
   });
 }
+
