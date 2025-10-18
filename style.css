@@ -104,33 +104,46 @@ p {
 }
 
 /* --- QR --- */
-.qr-container {
+.qr-container.single {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
   margin-top: 20px;
 }
 
 .qr-box {
   background: #fff;
   border: 2px solid #f7d9e3;
-  padding: 20px;
+  padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  width: 250px;
-}
-
-.qr-box h3 {
-  color: #a34a6a;
-  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  width: 280px;
+  text-align: center;
 }
 
 .qr-box img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
+
+.qr-note {
+  color: #a34a6a;
+  font-size: 1rem;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .qr-box {
+    width: 85%;
+    padding: 18px;
+  }
+  .qr-note {
+    font-size: 0.95rem;
+  }
+}
+
 
 /* --- MAP --- */
 .map-container {
