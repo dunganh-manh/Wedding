@@ -50,7 +50,7 @@ body { font-family: "Quicksand", sans-serif; background-color:#fffafc; color:#4b
 }
 @media (max-width: 768px) {
   .hero .content {
-    margin-top: 20vh; /* đẩy cao hơn nữa trên mobile */
+    margin-top: 120vh; /* đẩy cao hơn nữa trên mobile */
   }
 
   .hero h1 {
