@@ -709,3 +709,72 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
     width: 140px;
   }
 }
+
+ /* 🌸 QR Mừng cưới ẩn trong hộp quà */
+#qr-section {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.gift-box-container {
+  position: relative;
+  display: inline-block;
+}
+
+.gift-btn {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gift-btn:hover {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* QR popup ẩn mặc định */
+.qr-popup {
+  position: absolute;
+  left: 50%;
+  top: -380px;
+  transform: translateX(-50%) translateY(30px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  background: #fff9fa;
+  border: 2px solid #e5c6b0;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  padding: 16px;
+  transition: all 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 10; /* quan trọng: đảm bảo QR không bị phần khác che */
+}
+
+/* Khi mở hộp quà */
+.qr-popup.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* Hộp quà sáng nhẹ khi mở */
+.gift-btn.active {
+  animation: glowPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 6px #d8b678; }
+  50% { text-shadow: 0 0 14px #f5e6b2; }
+}
+
+.qr-box img {
+  width: 180px;
+  border-radius: 10px;
+}
+
+.qr-note {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #4a3a3a;
+}
+
