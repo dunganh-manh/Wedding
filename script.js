@@ -93,3 +93,31 @@ window.addEventListener("load", () => {
     }
   })();
 });
+
+// --- Sổ lưu bút đơn giản, lưu tại trình duyệt ---
+const form = document.getElementById("wishForm");
+const list = document.getElementById("wishList");
+let wishes = JSON.parse(localStorage.getItem("wishes") || "[]");
+
+function renderWishes() {
+  list.innerHTML = "";
+  wishes.forEach((w) => {
+    const div = document.createElement("div");
+    div.className = "wish-item";
+    div.innerHTML = `<strong>${w.name}</strong><p>${w.msg}</p>`;
+    list.appendChild(div);
+  });
+}
+renderWishes();
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = document.getElementById("guestName").value.trim();
+  const msg = document.getElementById("guestMessage").value.trim();
+  if (!name || !msg) return;
+
+  wishes.unshift({ name, msg });
+  localStorage.setItem("wishes", JSON.stringify(wishes));
+  form.reset();
+  renderWishes();
+});
