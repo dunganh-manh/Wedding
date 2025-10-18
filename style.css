@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,15 +7,15 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #fafafa;
-  color: #222;
+  font-family: "Quicksand", sans-serif;
+  background-color: #fffafc;
+  color: #4b2e2b;
   text-align: center;
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
-/* --- HERO SECTION --- */
+/* --- HERO --- */
 .hero {
   position: relative;
   height: 100vh;
@@ -28,7 +30,7 @@ body {
 .hero .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .hero .content {
@@ -38,50 +40,53 @@ body {
 }
 
 .hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  color: #fff5f7;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin: 15px 0;
+  color: #ffe9ef;
 }
 
 .btn {
-  background: white;
-  color: #333;
+  background: #f7d9e3;
+  color: #4b2e2b;
   padding: 12px 30px;
   border-radius: 30px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: #f3f3f3;
+  background: #f4bfd0;
 }
 
 /* --- SECTIONS --- */
 section {
-  padding: 70px 20px;
+  padding: 80px 20px;
   max-width: 900px;
   margin: 0 auto;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
   margin-bottom: 20px;
+  color: #a34a6a;
 }
 
 p {
-  font-size: 1rem;
-  margin-bottom: 10px;
+  font-size: 1.05rem;
 }
 
 /* --- GALLERY --- */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 15px;
   margin-top: 20px;
 }
@@ -98,7 +103,46 @@ p {
   opacity: 0.9;
 }
 
-/* --- RSVP FORM --- */
+/* --- QR --- */
+.qr-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.qr-box {
+  background: #fff;
+  border: 2px solid #f7d9e3;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  width: 250px;
+}
+
+.qr-box h3 {
+  color: #a34a6a;
+  margin-bottom: 10px;
+}
+
+.qr-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* --- MAP --- */
+.map-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* --- RSVP --- */
 form {
   display: flex;
   flex-direction: column;
@@ -110,13 +154,13 @@ input, select, button {
   width: 85%;
   max-width: 400px;
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #f1bccc;
   border-radius: 8px;
   font-size: 1rem;
 }
 
 button {
-  background: #111;
+  background: #a34a6a;
   color: white;
   border: none;
   cursor: pointer;
@@ -124,33 +168,30 @@ button {
 }
 
 button:hover {
-  background: #444;
+  background: #8b3e5b;
 }
 
 /* --- FOOTER --- */
 footer {
-  background: #111;
-  color: white;
+  background: #f7d9e3;
+  color: #4b2e2b;
   padding: 20px;
   font-size: 0.9rem;
 }
 
-/* --- ANIMATIONS --- */
+/* --- ANIMATION --- */
 .fade-in {
   animation: fadeIn 1.5s ease-in;
 }
-
 .fade-section {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
-
 .fade-section.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -158,133 +199,16 @@ footer {
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-  .hero {
-    height: 90vh;
-  }
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-  .btn {
-    padding: 10px 24px;
-    font-size: 0.95rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
-  section {
-    padding: 60px 15px;
-  }
+  .hero h1 { font-size: 2.3rem; }
+  .hero p { font-size: 1rem; }
+  h2 { font-size: 1.6rem; }
+  section { padding: 60px 15px; }
 }
 
 @media (max-width: 480px) {
-  .hero {
-    height: 80vh;
-    padding: 0 10px;
-  }
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  .hero p {
-    font-size: 0.95rem;
-  }
-  p {
-    font-size: 0.95rem;
-  }
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-  input, select, button {
-    width: 95%;
-  }
-}
-/* --- POPUP NHẠC --- */
-.popup {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 999;
-}
-
-.popup.show {
-  visibility: visible;
-  opacity: 1;
-}
-
-.popup-content {
-  background: white;
-  padding: 25px 30px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.popup-content p {
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-}
-
-.popup-content button {
-  background: #111;
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.popup-content button:hover {
-  background: #444;
-}
-
-/* --- QR SECTION --- */
-.qr-container {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.qr-box {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  width: 250px;
-}
-
-.qr-box img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-/* --- MAP --- */
-.map-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-  .qr-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .qr-box {
-    width: 80%;
-  }
+  .hero h1 { font-size: 1.8rem; }
+  .hero p { font-size: 0.9rem; }
+  .gallery { grid-template-columns: 1fr; }
+  input, select, button { width: 95%; }
+  .qr-box { width: 85%; }
 }
