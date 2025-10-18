@@ -50,10 +50,37 @@ function updateCountdown() {
       `💐 Đã trôi qua ${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây kể từ ngày cưới 💐`;
   } else {
     document.getElementById("countdown-timer").innerText =
-      `Còn ${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây đến ngày cưới 💞`;
+      `Còn ${days} ngày ${hours} giờ ${minutes} phút ${seconds} 💞`;
   }
 }
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
+// --- Hiệu ứng pháo hoa giấy khi load trang ---
+window.addEventListener("load", () => {
+  const duration = 5 * 1000; // thời gian chạy 5 giây
+  const end = Date.now() + duration;
+
+  (function frame() {
+    // tạo hiệu ứng nhẹ, màu pastel
+    confetti({
+      particleCount: 4,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors: ["#f7d9e3", "#ffe4ef", "#ffd1dc", "#fff0f5", "#fce1e4"],
+    });
+    confetti({
+      particleCount: 4,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors: ["#f7d9e3", "#ffe4ef", "#ffd1dc", "#fff0f5", "#fce1e4"],
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+});
