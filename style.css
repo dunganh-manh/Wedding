@@ -92,3 +92,56 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
 /* responsive */
 @media (max-width:768px){ .hero{height:90vh;} .hero h1{font-size:2.3rem;} .hero p{font-size:1rem;} h2{font-size:1.6rem;} section{padding:60px 15px;} .gallery img{height:200px;} .qr-box{width:280px;} }
 @media (max-width:480px){ .hero{height:80vh;padding:0 10px;} .hero h1{font-size:1.8rem;} .hero p{font-size:0.95rem;} .gallery{grid-template-columns:1fr;} input, select, textarea, button{width:95%;} .qr-box{width:85%;} }
+
+/* Popup đếm ngược */
+#countdown-popup {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(255, 240, 245, 0.95);
+  border: 2px solid #f7d9e3;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  padding: 15px 25px;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  z-index: 1000;
+  animation: fadeInUp 1.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.popup-content h3 {
+  color: #a34a6a;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+#countdown-timer {
+  font-size: 1.1rem;
+  color: #4b2e2b;
+  font-weight: 600;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ẩn hoặc thu nhỏ popup trên điện thoại */
+@media (max-width: 480px) {
+  #countdown-popup {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px 20px;
+  }
+  #countdown-timer {
+    font-size: 1rem;
+  }
+}
