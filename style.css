@@ -11,14 +11,16 @@ body {
 
 /* Hero */
 .hero {
-  position: relative;
   height: 100vh;
-  background: url('images/cover.jpg') center/cover no-repeat;
+  background: url("image/cover.jpg") center/cover no-repeat;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
+  text-align: center;
 }
+
 .hero .overlay {
   position: absolute;
   inset: 0;
