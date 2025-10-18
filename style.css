@@ -891,3 +891,44 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   right: calc(50% - 18px);
   font-size: 1.8rem;
 }
+/* Countdown section */
+#countdown-section {
+  text-align: center;
+  margin: 50px 0;
+}
+
+#countdown-section .countdown-title {
+  font-family: 'Playfair Display SC', serif; /* giống hệt LỄ THÀNH HÔN */
+  font-size: 2.5em;
+  color: #b79b55;
+  margin-bottom: 30px;
+}
+
+#countdown-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: #fff0f5cc;
+  padding: 20px 15px;
+  border-radius: 15px;
+  min-width: 80px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.time-box span {
+  display: block;
+  font-family: 'Playfair Display SC', serif; /* giống hệt LỄ THÀNH HÔN */
+  font-size: 2em;
+  color: #e91e63;
+}
+
+.time-box p {
+  margin: 5px 0 0;
+  font-family: 'Playfair Display SC', serif; /* giống hệt LỄ THÀNH HÔN */
+  font-size: 0.9em;
+  color: #555;
+}
