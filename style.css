@@ -504,7 +504,7 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
 
 /* Địa điểm nhà trai / nhà gái */
 .invite-side p {
-  font-size: 3.15rem;       /* lớn hơn để cân bố cục */
+  font-size: 1.15rem;       /* lớn hơn để cân bố cục */
   color: #4a3a3a;           /* đậm hơn cho dễ đọc */
   margin-top: 8px;
   font-weight: 500;
