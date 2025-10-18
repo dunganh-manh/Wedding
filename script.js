@@ -57,30 +57,39 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// --- Hiệu ứng pháo hoa giấy khi load trang ---
+// --- Hiệu ứng pháo hoa giấy khi trang load ---
 window.addEventListener("load", () => {
-  const duration = 5 * 1000; // thời gian chạy 5 giây
+  // tạo canvas confetti riêng
+  const canvas = document.createElement("canvas");
+  canvas.id = "confetti-canvas";
+  canvas.style.position = "fixed";
+  canvas.style.top = "0";
+  canvas.style.left = "0";
+  canvas.style.width = "100%";
+  canvas.style.height = "100%";
+  canvas.style.pointerEvents = "none";
+  canvas.style.zIndex = "9999";
+  document.body.appendChild(canvas);
+
+  const myConfetti = confetti.create(canvas, { resize: true });
+
+  const duration = 5000; // 5 giây
   const end = Date.now() + duration;
 
   (function frame() {
-    // tạo hiệu ứng nhẹ, màu pastel
-    confetti({
-      particleCount: 4,
-      angle: 60,
-      spread: 55,
-      origin: { x: 0 },
-      colors: ["#f7d9e3", "#ffe4ef", "#ffd1dc", "#fff0f5", "#fce1e4"],
-    });
-    confetti({
-      particleCount: 4,
-      angle: 120,
-      spread: 55,
-      origin: { x: 1 },
-      colors: ["#f7d9e3", "#ffe4ef", "#ffd1dc", "#fff0f5", "#fce1e4"],
+    myConfetti({
+      particleCount: 6,
+      startVelocity: 30,
+      spread: 90,
+      ticks: 60,
+      origin: { x: Math.random(), y: Math.random() - 0.2 },
+      colors: ["#f7d9e3", "#ffd1dc", "#fff0f5", "#fce1e4", "#f9e2ec"],
     });
 
     if (Date.now() < end) {
       requestAnimationFrame(frame);
+    } else {
+      setTimeout(() => canvas.remove(), 1000); // xoá canvas sau 1 giây
     }
   })();
 });
