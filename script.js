@@ -93,3 +93,48 @@ window.addEventListener("load", () => {
     }
   })();
 });
+
+
+// --- Firebase Realtime Database ---
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
+
+// Thay bằng cấu hình của bạn
+const firebaseConfig = {
+  apiKey: "AIzaSyA...",
+  authDomain: "wedding-wishes.firebaseapp.com",
+  databaseURL: "https://wedding-wishes-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "wedding-wishes",
+  storageBucket: "wedding-wishes.appspot.com",
+  messagingSenderId: "1234567890",
+  appId: "1:1234567890:web:abcdef"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+// --- Form lời chúc ---
+const rsvpForm = document.getElementById("rsvp-form");
+const wishList = document.getElementById("wishList");
+
+rsvpForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = document.getElementById("guestName").value.trim();
+  const message = document.getElementById("guestMessage").value.trim();
+  if (!name || !message) return;
+
+  push(ref(db, "wishes"), { name, message, time: Date.now() });
+  rsvpForm.reset();
+});
+
+// --- Realtime hiển thị ---
+onValue(ref(db, "wishes"), (snapshot) => {
+  wishList.innerHTML = "";
+  snapshot.forEach((child) => {
+    const data = child.val();
+    const div = document.createElement("div");
+    div.className = "wish-item";
+    div.innerHTML = `<strong>${data.name}</strong><p>${data.message}</p>`;
+    wishList.prepend(div);
+  });
+});
