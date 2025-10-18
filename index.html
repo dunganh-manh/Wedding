@@ -10,137 +10,6 @@
   <audio id="bg-music" loop>
     <source src="image/music.mp3" type="audio/mpeg">
   </audio>
-<!-- Section: Nhà trai - Nhà gái -->
-<section id="invite-section" style="background-color:#c2c5aa; color:#414833; font-family:'Poppins', sans-serif; text-align:center; padding:60px 20px; overflow:hidden;">
-  <h2 class="fade-up" style="letter-spacing:2px; font-weight:600; font-size:22px; text-transform:uppercase; margin-bottom:40px;">
-    TRÂN TRỌNG KÍNH MỜI
-  </h2>
-
-  <div class="fade-up delay-1" style="display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:60px; margin-bottom:40px;">
-    <!-- Nhà trai -->
-    <div>
-      <h3 style="font-size:20px; margin-bottom:10px; text-transform:uppercase;">NHÀ TRAI</h3>
-      <svg class="signature-svg" viewBox="0 0 500 100" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="champagneGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#bfa670"/>
-            <stop offset="50%" stop-color="#f3e7c6"/>
-            <stop offset="100%" stop-color="#d9b95b"/>
-          </linearGradient>
-          <linearGradient id="shineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="transparent">
-              <animate attributeName="offset" values="0;1" dur="4s" repeatCount="indefinite"/>
-            </stop>
-            <stop offset="0.2" stop-color="rgba(255,255,255,0.9)">
-              <animate attributeName="offset" values="0;1.2" dur="4s" repeatCount="indefinite"/>
-            </stop>
-            <stop offset="0.4" stop-color="transparent">
-              <animate attributeName="offset" values="0.2;1.4" dur="4s" repeatCount="indefinite"/>
-            </stop>
-          </linearGradient>
-        </defs>
-
-        <text x="50%" y="60%" text-anchor="middle" stroke="url(#champagneGradient)" stroke-width="1.5" fill="none">
-          Chú rể - Hữu Mạnh
-        </text>
-        <text x="50%" y="60%" text-anchor="middle" stroke="url(#shineGradient)" stroke-width="2" fill="none" opacity="0.8">
-          Chú rể - Hữu Mạnh
-        </text>
-      </svg>
-      <p style="font-size:16px;">TP. Vinh – Nghệ An</p>
-    </div>
-
-    <!-- SVG trái tim nối hai tên -->
-    <svg class="fade-up delay-2" width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5,30 C40,0 80,60 115,30" stroke="#bfa670" stroke-width="2" fill="none" stroke-linecap="round" />
-      <path d="M60 25 C62 22, 68 22, 70 25 C72 28, 68 34, 60 40 C52 34, 48 28, 50 25 C52 22, 58 22, 60 25Z"
-            fill="url(#champagneGradient)">
-        <animateTransform attributeName="transform" attributeType="XML" type="scale" values="1;1.2;1" dur="2s" repeatCount="indefinite"/>
-      </path>
-    </svg>
-
-    <!-- Nhà gái -->
-    <div>
-      <h3 style="font-size:20px; margin-bottom:10px; text-transform:uppercase;">NHÀ GÁI</h3>
-      <svg class="signature-svg" viewBox="0 0 500 100" xmlns="http://www.w3.org/2000/svg">
-        <use href="#champagneGradient" />
-        <text x="50%" y="60%" text-anchor="middle" stroke="url(#champagneGradient)" stroke-width="1.5" fill="none">
-          Cô dâu - Dung Anh
-        </text>
-        <text x="50%" y="60%" text-anchor="middle" stroke="url(#shineGradient)" stroke-width="2" fill="none" opacity="0.8">
-          Cô dâu - Dung Anh
-        </text>
-      </svg>
-      <p style="font-size:16px;">Thái Bình</p>
-    </div>
-  </div>
-
-  <div class="fade-up delay-3" style="margin-bottom:30px;">
-    <p style="font-size:16px; font-weight:500;">Vào ngày 30 tháng 10 năm 2025</p>
-    <p style="font-size:15px; font-style:italic;">(Tức ngày 10, tháng 9 năm Ất Tỵ)</p>
-  </div>
-
-  <div class="fade-up delay-4" style="max-width:600px; margin:0 auto;">
-    <p style="font-size:16px; line-height:1.7;">
-      <strong>Xin chân thành cảm ơn</strong><br>
-      Quý quan khách, bạn bè và người thân đã bớt chút thời gian quý báu
-      đến tham dự và chung vui cùng gia đình chúng tôi.<br>
-      Sự hiện diện của quý vị là niềm vinh hạnh và hạnh phúc lớn lao
-      đối với hai gia đình và đôi uyên ương. 💍
-    </p>
-  </div>
-</section>
-
-<!-- Font links -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-  /* Fade-in animation */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease;
-  }
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .delay-1 { transition-delay: 0.2s; }
-  .delay-2 { transition-delay: 0.4s; }
-  .delay-3 { transition-delay: 0.6s; }
-  .delay-4 { transition-delay: 0.8s; }
-
-  /* Signature SVG */
-  .signature-svg {
-    width: 320px;
-    height: 80px;
-    margin: 10px auto;
-    display: block;
-  }
-  .signature-svg text {
-    font-family: 'Great Vibes', cursive;
-    font-size: 36px;
-    stroke-dasharray: 900;
-    stroke-dashoffset: 900;
-    animation: handwriting 4s ease forwards;
-  }
-
-  @keyframes handwriting {
-    0% { stroke-dashoffset: 900; opacity: 0.5; }
-    100% { stroke-dashoffset: 0; opacity: 1; }
-  }
-</style>
-
-<script>
-  // Fade-up observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.2 });
-
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
 
   <header class="hero">
     <div class="overlay"></div>
@@ -150,6 +19,53 @@
       <a href="#rsvp" class="btn">Save the date</a>
     </div>
   </header>
+<!-- Section: Nhà trai - Nhà gái -->
+<section id="invite" class="fade-section">
+  <h2>TRÂN TRỌNG KÍNH MỜI</h2>
+
+  <div class="invite-container">
+    <!-- Nhà trai -->
+    <div class="invite-side">
+      <h3>NHÀ TRAI</h3>
+      <svg class="signature-svg" viewBox="0 0 500 100">
+        <text x="50%" y="60%" text-anchor="middle">Chú rể - Hữu Mạnh</text>
+      </svg>
+      <p>TP. Vinh – Nghệ An</p>
+    </div>
+
+    <!-- Trái tim nối -->
+    <div class="invite-heart">
+      <svg viewBox="0 0 120 60">
+        <path d="M5,30 C40,0 80,60 115,30" />
+        <path class="heart-shape"
+              d="M60 25 C62 22, 68 22, 70 25 C72 28, 68 34, 60 40 C52 34, 48 28, 50 25 C52 22, 58 22, 60 25Z" />
+      </svg>
+    </div>
+
+    <!-- Nhà gái -->
+    <div class="invite-side">
+      <h3>NHÀ GÁI</h3>
+      <svg class="signature-svg" viewBox="0 0 500 100">
+        <text x="50%" y="60%" text-anchor="middle">Cô dâu - Dung Anh</text>
+      </svg>
+      <p>Thái Bình</p>
+    </div>
+  </div>
+
+  <div class="invite-date">
+    <p>Vào ngày 30 tháng 10 năm 2025</p>
+    <p>(Tức ngày 10, tháng 9 năm Ất Tỵ)</p>
+  </div>
+
+  <div class="invite-thanks">
+    <p><strong>Xin chân thành cảm ơn</strong><br>
+      Quý quan khách, bạn bè và người thân đã bớt chút thời gian quý báu
+      đến tham dự và chung vui cùng gia đình chúng tôi.<br>
+      Sự hiện diện của quý vị là niềm vinh hạnh và hạnh phúc lớn lao
+      đối với hai gia đình và đôi uyên ương. 💍
+    </p>
+  </div>
+</section>
 
   <section id="about" class="fade-section">
     <h2>Yêu là khi…</h2>
