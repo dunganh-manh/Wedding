@@ -104,23 +104,73 @@
     </div>
   </section>
 
-  <!-- 🎁 QR Mừng cưới ẩn trong hộp quà -->
-<section id="qr-section" class="fade-section">
-  <h2>Mừng cưới Dung Anh 💕 Hữu Mạnh</h2>
+ /* 🌸 QR Mừng cưới ẩn trong hộp quà */
+#qr-section {
+  text-align: center;
+  margin-top: 4rem;
+}
 
-  <div class="gift-box-container">
-    <button class="gift-btn" id="giftToggle" aria-label="Mở hộp quà">
-      🎁
-    </button>
+.gift-box-container {
+  position: relative;
+  display: inline-block;
+}
 
-    <div class="qr-popup" id="qrPopup">
-      <div class="qr-box">
-        <img src="image/qr-wedding.jpg" alt="QR mừng cưới Dung Anh & Mạnh">
-        <p class="qr-note">Quét mã để gửi lời chúc và mừng cưới đến chúng tôi 💕</p>
-      </div>
-    </div>
-  </div>
-</section>
+.gift-btn {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gift-btn:hover {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* QR popup ẩn mặc định */
+.qr-popup {
+  position: absolute;
+  left: 50%;
+  top: -380px;
+  transform: translateX(-50%) translateY(30px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  background: #fff9fa;
+  border: 2px solid #e5c6b0;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  padding: 16px;
+  transition: all 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 10; /* quan trọng: đảm bảo QR không bị phần khác che */
+}
+
+/* Khi mở hộp quà */
+.qr-popup.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* Hộp quà sáng nhẹ khi mở */
+.gift-btn.active {
+  animation: glowPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 6px #d8b678; }
+  50% { text-shadow: 0 0 14px #f5e6b2; }
+}
+
+.qr-box img {
+  width: 180px;
+  border-radius: 10px;
+}
+
+.qr-note {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #4a3a3a;
+}
 
 
   <section id="rsvp" class="fade-section">
@@ -157,7 +207,7 @@
     <p>© 2025 Dung Anh 💞 Mạnh Wedding</p>
   </footer>
 
-  <script src="script.js"></script>
+  
   <!-- Countdown Popup -->
 <div id="countdown-popup">
   <div class="popup-content">
@@ -206,7 +256,7 @@ window.addEventListener("load", () => {
 </script>
 <!-- 🎵 Wedding Music Player -->
 <audio id="weddingMusic" loop preload="auto">
-  <source src="https://cdn.pixabay.com/audio/2023/03/30/audio_1a1a5aee63.mp3" type="audio/mpeg">
+  <source src="audio/weddingmusic.mp3" type="audio/mpeg">
   Trình duyệt của bạn không hỗ trợ audio.
 </audio>
 
@@ -284,6 +334,6 @@ window.addEventListener("load", () => {
   });
 </script>
 
-
+<script src="script.js"></script>
 </body>
 </html>
