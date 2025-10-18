@@ -93,13 +93,9 @@
     <p id="countdown-timer">00 ngày 00 giờ 00 phút 00 giây</p>
   </div>
 </div>
-<!-- Hiệu ứng pháo hoa giấy -->
+<!-- Hiệu ứng pháo hoa giấy mềm mại -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-
-<!-- Script chính -->
 <script src="script.js"></script>
-
-<!-- Khởi chạy pháo hoa khi trang load xong -->
 <script>
 window.addEventListener("load", () => {
   const canvas = document.createElement("canvas");
@@ -117,25 +113,26 @@ window.addEventListener("load", () => {
 
   const myConfetti = confetti.create(canvas, { resize: true, useWorker: true });
 
-  const duration = 5000; // chạy 5 giây
+  const duration = 6000; // 6 giây, lâu hơn một chút
   const end = Date.now() + duration;
 
   (function frame() {
     myConfetti({
-      particleCount: 8,
-      startVelocity: 35,
-      spread: 90,
-      ticks: 80,
-      gravity: 0.7,
-      scalar: 1.2,
-      origin: { x: Math.random(), y: Math.random() - 0.2 },
-      colors: ["#f7d9e3", "#ffd1dc", "#fff0f5", "#fce1e4", "#f9e2ec"]
+      particleCount: 3,           // ít hạt hơn, bay nhẹ
+      startVelocity: 15,          // tốc độ bắn ra thấp
+      spread: 70,                 // góc bắn vừa phải
+      ticks: 200,                 // tồn tại lâu hơn
+      gravity: 0.3,               // rơi chậm hơn
+      scalar: 1,                  // kích thước nhỏ gọn
+      origin: { x: Math.random(), y: Math.random() - 0.1 },
+      colors: ["#f7d9e3", "#ffd1dc", "#fff0f5", "#fce1e4", "#fde6ee"]
     });
     if (Date.now() < end) requestAnimationFrame(frame);
-    else setTimeout(() => canvas.remove(), 1000);
+    else setTimeout(() => canvas.remove(), 1500);
   })();
 });
 </script>
+
 
 </body>
 </html>
