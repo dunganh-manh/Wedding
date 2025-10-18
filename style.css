@@ -502,13 +502,34 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
 }
 
 
-/* Địa điểm nhà trai / nhà gái */
+/* 🌸 Địa điểm nhà trai / nhà gái */
 .invite-side p {
-  font-size: 52px;       /* lớn hơn để cân bố cục */
-  color: #4a3a3a;           /* đậm hơn cho dễ đọc */
-  margin-top: 8px;
+  font-size: 2.2rem;              /* kích thước linh hoạt hơn (tương đương ~35px) */
+  color: #4a3a3a;                 /* cùng tone nâu trầm */
+  margin-top: 10px;
   font-weight: 500;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* 💻 Tự động điều chỉnh theo thiết bị */
+@media (max-width: 1024px) {
+  .invite-side p {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .invite-side p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .invite-side p {
+    font-size: 1.4rem;
+  }
 }
 
 
