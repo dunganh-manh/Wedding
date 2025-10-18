@@ -137,3 +137,4 @@ onValue(ref(db, "wishes"), (snapshot) => {
     wishList.prepend(div);
   });
 });
+
