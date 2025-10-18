@@ -94,3 +94,16 @@ window.addEventListener("load", () => {
   })();
 });
 
+// Khi phần #invite hiển thị trong khung nhìn, thêm class visible
+const inviteSection = document.querySelector('#invite');
+if (inviteSection) {
+  const inviteObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        inviteSection.classList.add('visible');
+        inviteObserver.unobserve(inviteSection);
+      }
+    });
+  }, { threshold: 0.2 });
+  inviteObserver.observe(inviteSection);
+}

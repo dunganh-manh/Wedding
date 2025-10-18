@@ -517,3 +517,91 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   0% { stroke-dashoffset: 900; opacity: 0.4; }
   100% { stroke-dashoffset: 0; opacity: 1; }
 }
+
+/* 🌿 Animation mềm mại và tinh tế hơn khi phần thiệp vào giữa */
+.left-side,
+.right-side,
+.invite-heart,
+.invite-date,
+.invite-thanks {
+  opacity: 0;
+  transition: all 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+.left-side {
+  transform: translateX(-90px) scale(0.95);
+}
+
+.right-side {
+  transform: translateX(90px) scale(0.95);
+}
+
+.invite-heart {
+  transform: scale(0.8);
+}
+
+.invite-date,
+.invite-thanks {
+  transform: translateY(50px);
+}
+
+/* Khi phần thiệp xuất hiện */
+#invite.visible .left-side,
+#invite.visible .right-side,
+#invite.visible .invite-heart,
+#invite.visible .invite-date,
+#invite.visible .invite-thanks {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+/* Độ trễ hợp lý giữa các phần để nhìn tự nhiên */
+#invite.visible .left-side { transition-delay: 0.1s; }
+#invite.visible .right-side { transition-delay: 0.25s; }
+#invite.visible .invite-heart { transition-delay: 0.4s; }
+#invite.visible .invite-date { transition-delay: 0.55s; }
+#invite.visible .invite-thanks { transition-delay: 0.7s; }
+
+/* Hiệu ứng “thở” nhẹ sau khi dừng lại (tim đập nhè nhẹ) */
+#invite.visible .invite-heart svg {
+  animation: heartFloat 4s ease-in-out infinite;
+}
+
+@keyframes heartFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* 💍 Hiệu ứng khung tổng thể zoom nhẹ khi xuất hiện */
+#invite {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+#invite.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Phối hợp với hiệu ứng chi tiết bên trong (đã thêm trước đó) */
+#invite.visible .left-side,
+#invite.visible .right-side,
+#invite.visible .invite-heart,
+#invite.visible .invite-date,
+#invite.visible .invite-thanks {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+/* Giữ hiệu ứng "thở" nhẹ cho trái tim */
+#invite.visible .invite-heart svg {
+  animation: heartFloat 4s ease-in-out infinite;
+}
+
+@keyframes heartFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
