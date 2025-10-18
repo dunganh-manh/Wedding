@@ -23,7 +23,7 @@ body { font-family: "Quicksand", sans-serif; background-color:#fffafc; color:#4b
   position: relative;
   z-index: 2;
   padding: 20px 30px;
-  margin-top: 22vh; /* đẩy chữ lên cao để không che mặt */
+  margin-top: 50vh; /* đẩy chữ lên cao để không che mặt */
   background: rgba(255, 255, 255, 0.1); /* lớp mờ nhẹ */
   backdrop-filter: blur(10px); /* tạo hiệu ứng mờ */
   border-radius: 20px;
@@ -62,7 +62,7 @@ body { font-family: "Quicksand", sans-serif; background-color:#fffafc; color:#4b
 /* Responsive cho mobile */
 @media (max-width: 768px) {
   .hero .content {
-    margin-top: 12vh; /* chữ lên cao hơn */
+    margin-top: 8vh; /* chữ lên cao hơn */
     padding: 15px 20px;
     backdrop-filter: blur(8px);
   }
