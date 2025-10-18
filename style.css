@@ -6,7 +6,7 @@ body { font-family: "Quicksand", sans-serif; background-color:#fffafc; color:#4b
   height: 100vh;
   background: url("image/cover.jpg") center/cover no-repeat;
   display: flex;
-  align-items: flex-start; /* đẩy lên trên */
+  align-items: flex-start; /* đẩy chữ lên trên */
   justify-content: center;
   text-align: center;
   color: white;
@@ -18,11 +18,16 @@ body { font-family: "Quicksand", sans-serif; background-color:#fffafc; color:#4b
   background: rgba(0, 0, 0, 0.35);
 }
 
+/* Thêm hiệu ứng nền mờ phía sau nội dung */
 .hero .content {
   position: relative;
   z-index: 2;
-  padding: 0 20px;
-  margin-top: 30vh; /* đẩy nội dung lên cao hơn để không che mặt */
+  padding: 20px 30px;
+  margin-top: 30vh; /* đẩy chữ lên cao để không che mặt */
+  background: rgba(255, 255, 255, 0.1); /* lớp mờ nhẹ */
+  backdrop-filter: blur(10px); /* tạo hiệu ứng mờ */
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero h1 {
@@ -47,10 +52,19 @@ body { font-family: "Quicksand", sans-serif; background-color:#fffafc; color:#4b
   font-weight: 600;
   transition: 0.3s;
   font-size: 1.2rem;
+  display: inline-block;
 }
+
+.btn:hover {
+  background: #f4bfd0;
+}
+
+/* Responsive cho mobile */
 @media (max-width: 768px) {
   .hero .content {
-    margin-top: 5vh; /* đẩy cao hơn nữa trên mobile */
+    margin-top: 12vh; /* chữ lên cao hơn */
+    padding: 15px 20px;
+    backdrop-filter: blur(8px);
   }
 
   .hero h1 {
