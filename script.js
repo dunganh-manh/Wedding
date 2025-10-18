@@ -14,3 +14,15 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 sections.forEach(section => observer.observe(section));
+// --- Popup nhạc ---
+window.addEventListener('load', () => {
+  const popup = document.getElementById('music-popup');
+  const btn = document.getElementById('play-music');
+  const audio = new Audio('image/music.mp3'); // Đặt file nhạc tại image/music.mp3
+
+  popup.classList.add('show');
+  btn.addEventListener('click', () => {
+    audio.play();
+    popup.classList.remove('show');
+  });
+});
