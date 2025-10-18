@@ -22,7 +22,7 @@ body { font-family: "Quicksand", sans-serif; background-color:#fffafc; color:#4b
   position: relative;
   z-index: 2;
   padding: 0 20px;
-  margin-top: 22vh; /* đẩy nội dung lên cao hơn để không che mặt */
+  margin-top: 30vh; /* đẩy nội dung lên cao hơn để không che mặt */
 }
 
 .hero h1 {
@@ -50,7 +50,7 @@ body { font-family: "Quicksand", sans-serif; background-color:#fffafc; color:#4b
 }
 @media (max-width: 768px) {
   .hero .content {
-    margin-top: 120vh; /* đẩy cao hơn nữa trên mobile */
+    margin-top: 5vh; /* đẩy cao hơn nữa trên mobile */
   }
 
   .hero h1 {
