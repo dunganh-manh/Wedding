@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weddings | Dung Anh & Mạnh </title>
+  <title>Weddings | Dung Anh & Mạnh</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <audio id="bg-music" loop>
+    <source src="image/music.mp3" type="audio/mpeg">
+  </audio>
+
   <header class="hero">
     <div class="overlay"></div>
     <div class="content fade-in">
-      <h1>Dung Anh & Mạnh</h1>
+      <h1>Dung Anh &amp; Mạnh</h1>
       <p>30.10.2025 • TP. Vinh - Nghệ An</p>
-      <a href="#rsvp" class="btn">Xác nhận tham gia!</a>
-
+      <a href="#rsvp" class="btn">Xác nhận tham gia</a>
     </div>
   </header>
 
@@ -37,28 +40,38 @@
     </div>
   </section>
 
-  <section id="event" class="fade-section">
-    <h2>Thông tin lễ cưới</h2>
-    <p><strong>Thời gian:</strong> 10:00, ngày 30 tháng 10 năm 2025</p>
-    <p><strong>Địa điểm:</strong> Nhà hàng Riverside Palace, TP.Vinh</p>
-  </section>
-<!-- QR mừng cưới -->
-<section id="qr-section" class="fade-section">
-  <h2>Mừng cưới Dung Anh & Mạnh</h2>
-  <div class="qr-container single">
-    <div class="qr-box">
-      <img src="image/qr-wedding.jpg" alt="QR mừng cưới Dung Anh & Mạnh">
-      <p class="qr-note">Quét mã để gửi lời chúc và mừng cưới online 💕</p>
+  <!-- QR mừng cưới chung -->
+  <section id="qr-section" class="fade-section">
+    <h2>Mừng cưới Dung Anh &amp; Mạnh</h2>
+    <div class="qr-container single">
+      <div class="qr-box">
+        <img src="image/qr-wedding.jpg" alt="QR mừng cưới Dung Anh & Mạnh">
+        <p class="qr-note">Quét mã để gửi lời chúc và mừng cưới đến chúng tôi 💕</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Google Map -->
+  <section id="rsvp" class="fade-section">
+    <h2>Xác nhận tham dự</h2>
+    <form id="rsvp-form">
+      <input type="text" id="guestName" name="name" placeholder="Họ và tên" required>
+      <select id="guestStatus" name="status" required>
+        <option value="">Chọn trạng thái</option>
+        <option value="yes">Tôi sẽ tham dự</option>
+        <option value="no">Rất tiếc, tôi không thể</option>
+      </select>
+      <textarea id="guestMessage" name="message" placeholder="Gửi lời chúc..." rows="3"></textarea>
+      <button type="submit">Gửi</button>
+    </form>
+    <p id="form-msg" class="form-msg"></p>
+  </section>
+
   <section id="map" class="fade-section">
-    <h2>Đường di chuyển</h2>
+    <h2>Địa điểm tổ chức</h2>
     <div class="map-container">
+      <!-- Replace src with actual Google Maps embed link -->
       <iframe
-        src="https://www.google.com/maps/d/u/0/embed?mid=1U4X1eF1U_0ZWaeH8w7Rrm0OnnlW_XMA&ehbc=2E312F"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3638413107186!2d105.676!3d10.779!4m2!3m1!1s0x0:0x0!5e0!3m2!1svi!2s!4v0000000000000"
         width="100%"
         height="350"
         style="border:0;"
@@ -68,15 +81,8 @@
     </div>
   </section>
 
-
-  <!-- Popup nhạc -->
-<audio id="bg-music" loop>
-  <source src="image/music.mp3" type="audio/mpeg">
-</audio>
-
-
   <footer>
-    <p>© 2025 Dung Anh & Mạnh Weddings</p>
+    <p>© 2025 Dung Anh &amp; Mạnh Weddings</p>
   </footer>
 
   <script src="script.js"></script>
