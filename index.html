@@ -79,6 +79,31 @@
     </p>
   </div>
 </section>
+<section id="countdown-section" class="fade-section">
+  <h2 class="countdown-title">ĐẾM NGƯỢC NGÀY TRỌNG ĐẠI</h2>
+  <div id="countdown-box">
+    <div class="time-box"><span id="days">00</span><p>NGÀY</p></div>
+    <div class="time-box"><span id="hours">00</span><p>GIỜ</p></div>
+    <div class="time-box"><span id="minutes">00</span><p>PHÚT</p></div>
+    <div class="time-box"><span id="seconds">00</span><p>GIÂY</p></div>
+  </div>
+</section>
+<section id="calendar-section" class="fade-section">
+  <div class="calendar-envelope">
+    <div class="calendar-header">
+      <h2>THÁNG 10 - 2025</h2>
+    </div>
+    <table class="calendar-table">
+      <thead>
+        <tr>
+          <th>CN</th><th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th><th>T7</th>
+        </tr>
+      </thead>
+      <tbody id="calendar-body"></tbody>
+    </table>
+    <div class="wax-seal">❤️</div>
+  </div>
+</section>
 
 
 
@@ -106,16 +131,17 @@
   <section id="rsvp" class="fade-section">
     <h2>Xác nhận tham dự</h2>
     <form id="rsvp-form">
-      <input type="text" id="guestName" name="name" placeholder="Họ và tên" required>
-      <select id="guestStatus" name="status" required>
-        <option value="">Chọn trạng thái</option>
-        <option value="yes">Tôi sẽ tham dự</option>
-        <option value="no">Rất tiếc, tôi không thể</option>
-      </select>
-      <textarea id="guestMessage" name="message" placeholder="Gửi lời chúc..." rows="3"></textarea>
-      <button type="submit">Gửi</button>
-    </form>
-    <p id="form-msg" class="form-msg"></p>
+  <input type="text" id="guestName" name="entry.2012345678" placeholder="Họ và tên" required>
+  <select id="guestStatus" name="entry.3098765432" required>
+    <option value="">Chọn trạng thái</option>
+    <option value="yes">Tôi sẽ tham dự</option>
+    <option value="no">Rất tiếc, tôi không thể</option>
+  </select>
+  <textarea id="guestMessage" name="entry.4076543210" placeholder="Gửi lời chúc..." rows="3"></textarea>
+  <button type="submit">Gửi</button>
+</form>
+<p id="form-msg" class="form-msg"></p>
+
   </section>
 
   <section id="map" class="fade-section">
@@ -137,14 +163,7 @@
     <p>© 2025 Dung Anh 💕 Mạnh Wedding</p>
   </footer>
 
-  
-  <!-- Countdown Popup -->
-<div id="countdown-popup">
-  <div class="popup-content">
-    <h3>💕 Đếm ngược đến ngày cưới 💕</h3>
-    <p id="countdown-timer">00 ngày 00 giờ 00 phút 00 giây</p>
-  </div>
-</div>
+
 <!-- Hiệu ứng pháo hoa giấy mềm mại -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 <script src="script.js"></script>

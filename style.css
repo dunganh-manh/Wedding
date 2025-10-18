@@ -781,3 +781,113 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
 }
 
 >>>>>>> 30e6f494b4c7c0005b1a7b08c05501a67680dd46
+/* COUNTDOWN */
+#countdown-section {
+  text-align: center;
+  margin: 4rem auto;
+}
+
+.countdown-title {
+  font-size: 2rem;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: #3a3a3a;
+  margin-bottom: 1.5rem;
+}
+
+#countdown-box {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: #f5f5f0;
+  border: 2px solid #b89f65;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  padding: 1rem 1.5rem;
+  min-width: 90px;
+  transition: all 0.3s ease;
+}
+
+.time-box:hover {
+  transform: translateY(-5px);
+}
+
+.time-box span {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #b79b55;
+}
+
+.time-box p {
+  margin: 0;
+  font-size: 1rem;
+  color: #4a4a4a;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* CALENDAR */
+#calendar-section {
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.calendar-envelope {
+  background: #fdf6f3;
+  border: 2px solid #8b2b2b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(100,0,0,0.2);
+}
+
+.calendar-header h2 {
+  color: #8b2b2b;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.calendar-table {
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.calendar-table th,
+.calendar-table td {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.calendar-table td {
+  color: #4a3a3a;
+}
+
+.calendar-table td.heart-day {
+  background-color: #b32d3e;
+  color: #fff;
+  position: relative;
+}
+
+.calendar-table td.heart-day::after {
+  content: "❤️";
+  position: absolute;
+  font-size: 1.1rem;
+  top: 2px;
+  right: 2px;
+}
+
+.wax-seal {
+  position: absolute;
+  bottom: -20px;
+  right: calc(50% - 18px);
+  font-size: 1.8rem;
+}

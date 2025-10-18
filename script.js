@@ -107,5 +107,76 @@ if (inviteSection) {
   }, { threshold: 0.2 });
   inviteObserver.observe(inviteSection);
 }
+// COUNTDOWN
+const weddingDate = new Date("Oct 30, 2025 00:00:00").getTime();
+
+const countdown = setInterval(() => {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
+
+  if (distance < 0) {
+    clearInterval(countdown);
+    document.getElementById("countdown-box").innerHTML = "<p>HÔM NAY LÀ NGÀY TRỌNG ĐẠI 💍</p>";
+  }
+}, 1000);
+
+// CALENDAR GENERATOR
+function generateCalendar(month, year) {
+  const firstDay = new Date(year, month).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const tbody = document.getElementById("calendar-body");
+
+  let date = 1;
+  for (let i = 0; i < 6; i++) {
+    const row = document.createElement("tr");
+    for (let j = 0; j < 7; j++) {
+      const cell = document.createElement("td");
+      if (i === 0 && j < firstDay) {
+        cell.innerText = "";
+      } else if (date > daysInMonth) {
+        break;
+      } else {
+        cell.innerText = date;
+        if (date === 30) cell.classList.add("heart-day");
+        date++;
+      }
+      row.appendChild(cell);
+    }
+    tbody.appendChild(row);
+  }
+}
+generateCalendar(9, 2025); // tháng 10 = index 9
+
+const rsvpForm = document.getElementById('rsvp-form');
+const formMsg = document.getElementById('form-msg');
+
+rsvpForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(rsvpForm);
+  const url = "https://forms.gle/ZeDE4monCdEqrpWG8"; // Thay FORM_ID_HERE
+
+  fetch(url, {
+    method: "POST",
+    mode: "no-cors",
+    body: formData
+  }).then(() => {
+    formMsg.textContent = "Cảm ơn bạn! 💖 Chúng tôi đã nhận thông tin.";
+    rsvpForm.reset();
+  }).catch(err => {
+    console.error(err);
+    formMsg.textContent = "Đã có lỗi xảy ra. Vui lòng thử lại sau.";
+  });
+});
 
 
