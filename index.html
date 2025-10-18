@@ -133,59 +133,6 @@ window.addEventListener("load", () => {
 });
 </script>
 
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-database-compat.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // --- Dán cấu hình Firebase của bạn vào đây ---
-  const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
-  };
-
-  // --- Khởi tạo Firebase ---
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
-
-  // --- Chức năng lời chúc ---
-  const form = document.getElementById("rsvp-form");
-  const list = document.getElementById("wishList");
-
-  if (form && list) {
-    // Gửi lời chúc
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = document.getElementById("guestName").value.trim();
-      const message = document.getElementById("guestMessage").value.trim();
-      if (!name || !message) return;
-      db.ref("wishes").push({ name, message, time: Date.now() });
-      form.reset();
-    });
-
-    // Hiển thị realtime
-    db.ref("wishes").on("value", (snapshot) => {
-      list.innerHTML = "";
-      snapshot.forEach((child) => {
-        const data = child.val();
-        const div = document.createElement("div");
-        div.className = "wish-item";
-        div.innerHTML = `<strong>${data.name}</strong><p>${data.message}</p>`;
-        list.prepend(div);
-      });
-    });
-  }
-});
-</script>
-
-<script src="script.js"></script>
-
 
 </body>
 </html>
