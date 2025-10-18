@@ -159,21 +159,34 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
     font-size: 1rem;
   }
 }
-/* ---------------------------------------------
-   Section: Nhà trai - Nhà gái
---------------------------------------------- */
+/* ------------------------------------------------
+   ✨ Section: Nhà trai – Nhà gái (khung riêng pastel)
+--------------------------------------------------- */
 #invite {
-  background-color: #fafafa; /* đồng bộ nền sáng */
-  color: #222;
+  background-color: #fceef3; /* nền hồng pastel nhẹ */
+  color: #3a2e2e;
+  border: 2px solid #d9b95b; /* viền vàng champagne */
+  border-radius: 28px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 60px 40px;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#invite:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
 #invite h2 {
-  font-size: 1.6rem;
-  letter-spacing: 1.5px;
-  font-weight: 600;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #503c3c;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .invite-container {
@@ -182,91 +195,83 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   align-items: center;
   gap: 80px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .invite-side h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  color: #5a4545;
+  margin-bottom: 15px;
 }
 
 .invite-side p {
-  font-size: 0.95rem;
-  color: #555;
+  font-size: 1rem;
+  color: #6b5858;
+  margin-top: 6px;
 }
 
 .signature-svg {
-  width: 320px;
-  height: 80px;
-  margin: 10px auto;
+  width: 340px;
+  height: 90px;
+  margin: 0 auto;
   display: block;
 }
 
 .signature-svg text {
   font-family: "Great Vibes", cursive;
-  font-size: 36px;
+  font-size: 48px;
   fill: none;
   stroke: url(#champagneGradient);
-  stroke-width: 1.5px;
+  stroke-width: 2.8px;
   stroke-dasharray: 900;
   stroke-dashoffset: 900;
-  animation: handwriting 4s ease forwards, shineMove 6s linear infinite 4s;
+  filter: drop-shadow(0 0 6px rgba(217,185,91,0.5));
+  animation: handwriting 3.8s ease forwards, shineMove 6s linear infinite 3.8s;
 }
 
-/* Gradient hiệu ứng champagne */
-.signature-svg text {
-  font-family: "Great Vibes", cursive;
-  font-size: 42px;               /* tăng kích thước để nổi hơn */
-  fill: none;
-  stroke: url(#champagneGradient);
-  stroke-width: 2.2px;           /* tăng độ dày nét */
-  stroke-dasharray: 900;
-  stroke-dashoffset: 900;
-  filter: drop-shadow(0 0 6px rgba(191,166,112,0.5)); /* ánh sáng mềm quanh chữ */
-  animation: handwriting 4s ease forwards, shineMove 6s linear infinite 4s;
-}
-
-
-/* Đường cong trái tim */
+/* trái tim nối hai bên */
 .invite-heart svg {
   width: 120px;
   height: 60px;
 }
 .invite-heart path {
-  stroke: #bfa670;
-  stroke-width: 2px;
+  stroke: #caa85e;
+  stroke-width: 2;
   fill: none;
   stroke-linecap: round;
 }
 .heart-shape {
-  fill: url(#champagneGradient);
+  fill: #e7d3a2;
   animation: heartPulse 2s infinite;
 }
 
-/* Dòng ngày và lời cảm ơn */
+/* ngày tháng + cảm ơn */
 .invite-date p:first-child {
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #4a3737;
 }
 .invite-date p:last-child {
   font-style: italic;
   font-size: 0.95rem;
-  color: #444;
+  color: #6b5858;
 }
 .invite-thanks {
-  max-width: 600px;
+  max-width: 640px;
   margin: 0 auto;
 }
 .invite-thanks p {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a3737;
 }
 
-/* Hiệu ứng vẽ chữ & ánh sáng */
+/* hiệu ứng viết tay */
 @keyframes handwriting {
-  0% { stroke-dashoffset: 900; opacity: 0.5; }
+  0% { stroke-dashoffset: 900; opacity: 0.4; }
   100% { stroke-dashoffset: 0; opacity: 1; }
 }
 @keyframes shineMove {
@@ -276,4 +281,59 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
 @keyframes heartPulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.15); }
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  #invite {
+    padding: 50px 30px;
+  }
+  .invite-container {
+    gap: 50px;
+  }
+  .signature-svg {
+    width: 280px;
+    height: 80px;
+  }
+  .signature-svg text {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  #invite {
+    padding: 40px 24px;
+  }
+  #invite h2 {
+    font-size: 1.6rem;
+  }
+  .invite-side h3 {
+    font-size: 1rem;
+  }
+  .signature-svg {
+    width: 240px;
+    height: 70px;
+  }
+  .signature-svg text {
+    font-size: 36px;
+  }
+  .invite-heart svg {
+    width: 80px;
+    height: 40px;
+  }
+}
+/* ------------------------------------------------
+   ✨ Animation nhẹ nhàng cho phần thiệp mời
+--------------------------------------------------- */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(6px);
+  transition: all 1.2s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
 }
