@@ -1351,22 +1351,16 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   z-index: 2;
 }
 
-/* Popup ẩn mặc định với opacity và transition */
+/* Popup ẩn mặc định */
 .popup {
-  display: none; /* vẫn để ẩn mặc định */
+  display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0); /* bắt đầu trong suốt */
+  background: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  transition: background 0.3s ease; /* fade nền */
-}
-
-.popup.show {
-  display: flex;
-  background: rgba(0,0,0,0.6); /* hiển thị mờ */
 }
 
 .popup-content {
@@ -1374,12 +1368,35 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  transform: scale(0.8);
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.popup.show .popup-content {
-  transform: scale(1);
-  opacity: 1;
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px; right: 20px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* QR layout */
+.qr-codes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.qr img {
+  width: 150px;
+  height: 150px;
+}
+.qr h4 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Gift icon */
+.gift-icon {
+  cursor: pointer;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
 }
