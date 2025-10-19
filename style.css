@@ -1023,46 +1023,60 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
 
 /* Countdown Section */
 #countdown-section {
-  text-align: center;
-  margin: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #fffaf0; /* có thể đổi theo theme */
 }
 
 .countdown-title {
-  font-family: 'Playfair Display SC', serif;
-  font-size: 2.5em;
-  color: #b79b55; /* vàng kim */
-  margin-bottom: 30px;
+  font-family: 'Playfair Display', sans-serif; /* font hiện đại, nhẹ nhàng */
+  font-weight: 500;
+  font-size: clamp(20px, 3vw, 28px);
+  color: #6b4f3f; /* màu nâu đồng bộ với các section khác */
+  text-align: center;
+  margin-bottom: 25px;
 }
 
 #countdown-box {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* hiển thị gọn trên mobile */
 }
 
 .time-box {
-  background: #fff0f5cc;
-  padding: 20px 15px;
-  border-radius: 15px;
-  min-width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background: #fdf6f0; /* màu nền nhẹ */
+  border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  flex: 1 1 70px;
+  padding: 5px;
 }
 
 .time-box span {
-  display: block;
-  font-family: 'Playfair Display SC', serif;
-  font-size: 2em;
-  color: #e91e63; /* hồng nổi bật */
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 600;
+  font-size: clamp(18px, 4vw, 28px);
+  color: #6b4f3f; /* chữ nâu */
 }
 
 .time-box p {
-  margin: 5px 0 0;
-  font-family: 'Playfair Display SC', serif;
-  font-size: 0.9em;
-  color: #b79b55; /* vàng kim */
+  font-family: 'Playfair Display', sans-serif;
+  font-size: clamp(10px, 2vw, 14px);
+  color: #6b4f3f;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
+
 
 /* Calendar Section */
 .calendar-envelope {
