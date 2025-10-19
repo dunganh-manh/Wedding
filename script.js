@@ -169,34 +169,29 @@ rsvpForm.addEventListener('submit', function(e) {
   });
 });
 
-const giftIcon = document.querySelector('.gift-icon');
-const popup = document.querySelector('.popup');
-const closeBtn = document.querySelector('.close-btn');
+const giftWrappers = document.querySelectorAll('.gift-wrapper');
 
-// Mở popup với fade-in
-giftIcon.addEventListener('click', () => {
-  popup.classList.add('show');
+giftWrappers.forEach(wrapper => {
+  const gift = wrapper.querySelector('.gift-icon');
+  const popup = wrapper.querySelector('.popup');
+  const closeBtn = wrapper.querySelector('.close-btn');
+
+  gift.addEventListener('click', () => {
+    popup.style.display = 'flex';
+  });
+
+  // Click nút đóng
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  // Click ra ngoài popup-content để đóng
+  popup.addEventListener('click', function(e) {
+    if (!e.target.closest('.popup-content')) {
+      popup.style.display = 'none';
+    }
+  });
 });
 
-// Đóng popup với fade-out
-const closePopup = () => {
-  popup.classList.remove('show');
-};
-
-// Đóng khi bấm nút X
-closeBtn.addEventListener('click', closePopup);
-
-// Đóng khi bấm ra ngoài popup-content
-popup.addEventListener('click', (e) => {
-  if (e.target === popup) {
-    closePopup();
-  }
-});
-
-popup.addEventListener('click', e => {
-  if (e.target === popup) { // chỉ click bên ngoài popup-content
-    popup.classList.remove('show');
-  }
-});
 
 
