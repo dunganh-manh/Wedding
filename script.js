@@ -193,4 +193,10 @@ popup.addEventListener('click', (e) => {
   }
 });
 
+popup.addEventListener('click', e => {
+  if (e.target === popup) { // chỉ click bên ngoài popup-content
+    popup.classList.remove('show');
+  }
+});
+
 

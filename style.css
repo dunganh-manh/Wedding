@@ -1351,9 +1351,9 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   z-index: 2;
 }
 
-/* Popup overlay với nền blur và transition */
+/* Popup overlay */
 .popup {
-  display: flex; /* luôn flex để căn giữa */
+  display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -1362,8 +1362,8 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  opacity: 0;           /* bắt đầu trong suốt */
-  visibility: hidden;   /* ẩn khỏi layout */
+  opacity: 0;
+  visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 1000;
 }
@@ -1376,19 +1376,20 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
 
 /* Popup content */
 .popup-content {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   padding: 20px;
   border-radius: 15px;
   text-align: center;
   width: 400px;
   max-width: 90%;
+  max-height: 80vh; /* chiều cao tối đa 80% viewport */
+  overflow-y: auto; /* scroll nếu nội dung vượt */
   position: relative;
   box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-  transform: scale(0.95);       /* nhỏ trước khi hiện */
+  transform: scale(0.95);
   transition: transform 0.3s ease;
 }
 
-/* Khi popup show, phóng to content */
 .popup.show .popup-content {
   transform: scale(1);
 }
@@ -1405,15 +1406,14 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
 .qr-codes {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin-top: 20px;
+  gap: 15px;
 }
 .qr img {
   width: 150px;
   height: 150px;
-}
-.qr h4 {
-  text-align: center;
-  margin-bottom: 5px;
+  max-width: 45vw;
 }
 
 /* Gift icon */
@@ -1422,4 +1422,24 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   font-size: 50px;
   text-align: center;
   margin-top: 20px;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .popup-content {
+    padding: 15px;
+    width: 90%;
+  }
+
+  .qr img {
+    width: 120px;
+    height: 120px;
+    max-width: 40vw;
+  }
+
+  .close-btn {
+    font-size: 18px;
+    top: 8px;
+    right: 15px;
+  }
 }
