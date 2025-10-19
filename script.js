@@ -188,22 +188,58 @@ if (giftBtn && qrPopup) {
   });
 }
 
-
+// coverslideshow
 const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
 let currentSlide = 0;
-const slideInterval = 5000; // 5 giây
+const slideInterval = 5000;
+let interval;
 
+// Hiển thị slide theo index
 function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-  });
+  slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+  dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+  currentSlide = index;
 }
 
+// Chuyển sang slide tiếp theo
 function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
+  showSlide((currentSlide + 1) % slides.length);
 }
 
-// Khởi động slideshow
+// Chuyển sang slide trước
+function prevSlide() {
+  showSlide((currentSlide - 1 + slides.length) % slides.length);
+}
+
+// Khởi động slideshow tự động
+function startInterval() {
+  interval = setInterval(nextSlide, slideInterval);
+}
+function resetInterval() {
+  clearInterval(interval);
+  startInterval();
+}
+
+// Nút Prev/Next
+document.querySelector('.prev').addEventListener('click', () => {
+  prevSlide();
+  resetInterval();
+});
+document.querySelector('.next').addEventListener('click', () => {
+  nextSlide();
+  resetInterval();
+});
+
+// Dots click
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    showSlide(i);
+    resetInterval();
+  });
+});
+
+// Init
 showSlide(currentSlide);
-setInterval(nextSlide, slideInterval);
+startInterval();
+
