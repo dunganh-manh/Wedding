@@ -990,3 +990,19 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   0%, 100% { text-shadow: 0 0 8px #d6b97b; }
   50% { text-shadow: 0 0 18px #f5e6b2; }
 }
+
+.section-title {
+  font-family: 'Playfair Display SC', serif; /* giống LỄ ĂN HỎI */
+  font-size: 2.5em;
+  color: #b79b55; /* màu vàng kim giống LỄ ĂN HỎI */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title .english-title {
+  display: block;       /* xuống dòng */
+  font-family: 'Playfair Display SC', serif; /* cùng font với tiếng Việt */
+  font-size: 1.5em;     /* nhỏ hơn một chút để phân biệt */
+  color: #b79b55;       /* cùng màu vàng kim */
+  margin-top: 5px;
+}
