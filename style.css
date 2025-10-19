@@ -1006,3 +1006,107 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   color: #b79b55;       /* cùng màu vàng kim */
   margin-top: 5px;
 }
+
+/* Font đồng bộ Lễ Ăn Hỏi */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;600&display=swap');
+
+/* Countdown Section */
+#countdown-section {
+  text-align: center;
+  margin: 50px 20px;
+}
+
+.countdown-title {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 2.5em;
+  color: #b79b55; /* vàng kim */
+  margin-bottom: 30px;
+}
+
+#countdown-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.time-box {
+  background: #fff0f5cc;
+  padding: 20px 15px;
+  border-radius: 15px;
+  min-width: 80px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: 1 1 70px;
+}
+
+.time-box span {
+  display: block;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 2em;
+  color: #e91e63; /* hồng nổi bật */
+}
+
+.time-box p {
+  margin: 5px 0 0;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 0.9em;
+  color: #b79b55; /* vàng kim */
+}
+
+/* Calendar Section */
+.calendar-envelope {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff0f5cc;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: 'Playfair Display SC', serif;
+}
+
+.calendar-header h2 {
+  font-size: 1.8em;
+  color: #b79b55;
+  margin-bottom: 15px;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.calendar-table th, .calendar-table td {
+  padding: 8px;
+  text-align: center;
+  font-family: 'Playfair Display SC', serif;
+  color: #e91e63; /* hồng nhẹ */
+}
+
+.calendar-table th {
+  font-weight: 600;
+  color: #b79b55;
+}
+
+.wax-seal {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  #countdown-box {
+    gap: 10px;
+  }
+  .time-box {
+    flex: 1 1 60px;
+    padding: 15px 10px;
+  }
+  .countdown-title {
+    font-size: 2em;
+  }
+  .calendar-envelope {
+    width: 90%;
+  }
+}
