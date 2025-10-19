@@ -932,3 +932,61 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   font-size: 0.9em;
   color: #555;
 }
+
+/* 🎁 Hộp quà */
+.gift-box-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.gift-btn {
+  background: none;
+  border: none;
+  font-size: 2.4rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gift-btn:hover {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* 🎀 QR Popup (ẩn mặc định) */
+.qr-popup {
+  position: absolute;
+  top: -260px;
+  background: #fffafc;
+  border: 2px solid #e3c5b7;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.qr-popup img {
+  width: 160px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Khi mở hộp quà */
+.qr-popup.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+/* Hiệu ứng bóng sáng quanh hộp quà khi mở */
+.gift-btn.active {
+  animation: glowPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 8px #d6b97b; }
+  50% { text-shadow: 0 0 18px #f5e6b2; }
+}

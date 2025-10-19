@@ -169,4 +169,22 @@ rsvpForm.addEventListener('submit', function(e) {
   });
 });
 
+const giftBtn = document.getElementById('giftToggle');
+const qrPopup = document.getElementById('qrPopup');
+
+if (giftBtn && qrPopup) {
+  giftBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    qrPopup.classList.toggle('active');
+    giftBtn.classList.toggle('active');
+  });
+
+  // Ấn ra ngoài để đóng popup
+  document.addEventListener('click', (e) => {
+    if (!qrPopup.contains(e.target) && !giftBtn.contains(e.target)) {
+      qrPopup.classList.remove('active');
+      giftBtn.classList.remove('active');
+    }
+  });
+}
 
