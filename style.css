@@ -1,12 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;500&display=swap');
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: "Quicksand", sans-serif; background-color:#fffafc; color:#4b2e2b; text-align:center; line-height:1.6; scroll-behavior:smooth; }
+/* ==============================
+   🌸 Fonts
+============================== */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;500&family=Playfair+Display+SC:wght@400;600&display=swap');
+
+/* ==============================
+   🌸 Reset & body
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #fffafc;
+  color: #4b2e2b;
+  line-height: 1.6;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+/* ==============================
+   🌸 Hero section
+============================== */
 .hero {
   position: relative;
   height: 100vh;
   background: url("image/cover.jpg") center/cover no-repeat;
   display: flex;
-  align-items: flex-start; /* đẩy chữ lên trên */
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
   color: white;
@@ -15,34 +38,36 @@ body { font-family: "Quicksand", sans-serif; background-color:#fffafc; color:#4b
 .hero .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0,0,0,0.35);
 }
 
-/* Thêm hiệu ứng nền mờ phía sau nội dung */
 .hero .content {
   position: relative;
   z-index: 2;
   padding: 20px 30px;
-  margin-top: 70vh; /* đẩy chữ lên cao để không che mặt */
-  background: rgba(255, 255, 255, 0.1); /* lớp mờ nhẹ */
-  backdrop-filter: blur(10px); /* tạo hiệu ứng mờ */
+  margin-top: 70vh;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .hero h1 {
   font-family: "Dancing Script", cursive;
-  font-size: 4.5rem; /* tăng kích thước tên */
+  font-size: 4.5rem;
   color: #fff5f7;
   line-height: 1.2;
 }
 
-.hero p {
-  font-size: 1.8rem; /* tăng kích thước ngày & địa điểm */
+.hero .hero-text {
+  font-size: 1.8rem;
   margin: 20px 0;
   color: #ffe9ef;
 }
 
+/* ==============================
+   🌸 Buttons
+============================== */
 .btn {
   background: #f7d9e3;
   color: #4b2e2b;
@@ -55,821 +80,128 @@ body { font-family: "Quicksand", sans-serif; background-color:#fffafc; color:#4b
   display: inline-block;
 }
 
-.btn:hover {
-  background: #f4bfd0;
+.btn:hover { background: #f4bfd0; }
+
+/* ==============================
+   🌸 Sections chung
+============================== */
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* Responsive cho mobile */
-@media (max-width: 768px) {
-  .hero .content {
-    margin-top: 5vh; /* chữ lên cao hơn */
-    padding: 15px 20px;
-    backdrop-filter: blur(8px);
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-  }
-
-  .hero p {
-    font-size: 1.4rem;
-  }
-
-  .btn {
-    font-size: 1rem;
-    padding: 12px 28px;
-  }
-}
-
-section { padding:80px 20px; max-width:1000px; margin:0 auto; }
-h2 { font-family:"Dancing Script", cursive; font-size:2rem; margin-bottom:20px; color:#a34a6a; }
-p { font-size:1.05rem; }
-.gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:15px; margin-top:20px; }
-.gallery img { width:100%; height:220px; object-fit:cover; border-radius:10px; transition: transform 0.45s cubic-bezier(.2,.8,.2,1), opacity 0.3s ease; transform-origin:center; }
-.gallery img:hover { transform: scale(1.06); opacity:0.95; }
-.qr-container.single { display:flex; justify-content:center; margin-top:20px; }
-.qr-box { background:#fff; border:2px solid #f7d9e3; padding:25px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.08); width:320px; text-align:center; }
-.qr-box img { width:100%; height:auto; border-radius:10px; margin-bottom:10px; }
-.qr-note { color:#a34a6a; font-size:1rem; margin-top:5px; font-style:italic; }
-.map-container { width:100%; max-width:800px; margin:0 auto; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
-form { display:flex; flex-direction:column; gap:15px; align-items:center; }
-input, select, textarea, button { width:85%; max-width:520px; padding:12px; border:1px solid #f1bccc; border-radius:8px; font-size:1rem; }
-textarea { resize:vertical; min-height:80px; }
-button { background:#a34a6a; color:white; border:none; cursor:pointer; transition:0.3s; padding:12px 20px; border-radius:8px; }
-button:hover { background:#8b3e5b; }
-footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
-/* animations */
-.fade-in { animation: fadeIn 1.2s ease-in; }
-.fade-section { opacity:0; transform:translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.fade-section.visible { opacity:1; transform:translateY(0); }
-@keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
-/* responsive */
-@media (max-width:768px){ .hero{height:90vh;} .hero h1{font-size:2.3rem;} .hero p{font-size:1rem;} h2{font-size:1.6rem;} section{padding:60px 15px;} .gallery img{height:200px;} .qr-box{width:280px;} }
-@media (max-width:480px){ .hero{height:80vh;padding:0 10px;} .hero h1{font-size:1.8rem;} .hero p{font-size:0.95rem;} .gallery{grid-template-columns:1fr;} input, select, textarea, button{width:95%;} .qr-box{width:85%;} }
-
-/* Popup đếm ngược */
-#countdown-popup {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: rgba(255, 240, 245, 0.95);
-  border: 2px solid #f7d9e3;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  padding: 15px 25px;
+/* ==============================
+   🌸 Invite Date (song ngữ)
+============================== */
+.invite-date {
   text-align: center;
-  font-family: "Quicksand", sans-serif;
-  z-index: 1000;
-  animation: fadeInUp 1.2s ease;
-  backdrop-filter: blur(8px);
+  margin: 20px 0;
+  font-family: 'Playfair Display SC', serif;
+  color: #b79b55;
 }
 
-.popup-content h3 {
-  color: #a34a6a;
-  font-family: "Dancing Script", cursive;
-  font-size: 1.4rem;
-  margin-bottom: 5px;
+.invite-date p {
+  margin: 5px 0;
 }
 
-#countdown-timer {
-  font-size: 1.1rem;
-  color: #4b2e2b;
+.invite-date .viet-date,
+.invite-date .viet-lunar {
+  font-size: 1.2em; /* lớn bằng phần địa điểm */
   font-weight: 600;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Ẩn hoặc thu nhỏ popup trên điện thoại */
-@media (max-width: 480px) {
-  #countdown-popup {
-    bottom: 15px;
-    right: 15px;
-    padding: 12px 20px;
-  }
-  #countdown-timer {
-    font-size: 1rem;
-  }
-}
-/* ------------------------------------------------
-   ✨ Section: Nhà trai – Nhà gái (khung riêng pastel)
---------------------------------------------------- */
-#invite {
-  background-color: #fceef3; /* nền hồng pastel nhẹ */
-  color: #3a2e2e;
-  border: 2px solid #d9b95b; /* viền vàng champagne */
-  border-radius: 28px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 60px 40px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#invite:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-#invite h2 {
-  font-size: 1.9rem;
-  font-weight: 700;
-  color: #503c3c;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 50px;
-}
-
-.invite-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 80px;
-  flex-wrap: wrap;
-  margin-bottom: 50px;
-}
-
-.invite-side h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: #5a4545;
-  margin-bottom: 15px;
-}
-
-.invite-side p {
-  font-size: 1rem;
-  color: #6b5858;
-  margin-top: 6px;
-}
-
-.signature-svg {
-  width: 340px;
-  height: 90px;
-  margin: 0 auto;
+.invite-date .eng-date,
+.invite-date .eng-lunar {
+  font-size: 1em;
+  font-weight: 400;
+  margin-top: 2px;
   display: block;
 }
 
-.signature-svg text {
-  font-family: "Great Vibes", cursive;
-  font-size: 48px;
-  fill: none;
-  stroke: url(#champagneGradient);
-  stroke-width: 2.8px;
-  stroke-dasharray: 900;
-  stroke-dashoffset: 900;
-  filter: drop-shadow(0 0 6px rgba(217,185,91,0.5));
-  animation: handwriting 3.8s ease forwards, shineMove 6s linear infinite 3.8s;
-}
-
-/* trái tim nối hai bên */
-.invite-heart svg {
-  width: 120px;
-  height: 60px;
-}
-.invite-heart path {
-  stroke: #caa85e;
-  stroke-width: 2;
-  fill: none;
-  stroke-linecap: round;
-}
-.heart-shape {
-  fill: #e7d3a2;
-  animation: heartPulse 2s infinite;
-}
-
-/* ngày tháng + cảm ơn */
-.invite-date p:first-child {
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: #4a3737;
-}
-.invite-date p:last-child {
-  font-style: italic;
-  font-size: 0.95rem;
-  color: #6b5858;
-}
-.invite-thanks {
-  max-width: 640px;
-  margin: 0 auto;
-}
-.invite-thanks p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #4a3737;
-}
-
-/* hiệu ứng viết tay */
-@keyframes handwriting {
-  0% { stroke-dashoffset: 900; opacity: 0.4; }
-  100% { stroke-dashoffset: 0; opacity: 1; }
-}
-@keyframes shineMove {
-  0% { stroke: url(#champagneGradient); }
-  100% { stroke: url(#champagneGradient); }
-}
-@keyframes heartPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-}
-
-/* responsive */
-@media (max-width: 900px) {
-  #invite {
-    padding: 50px 30px;
-  }
-  .invite-container {
-    gap: 50px;
-  }
-  .signature-svg {
-    width: 280px;
-    height: 80px;
-  }
-  .signature-svg text {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 600px) {
-  #invite {
-    padding: 40px 24px;
-  }
-  #invite h2 {
-    font-size: 1.6rem;
-  }
-  .invite-side h3 {
-    font-size: 1rem;
-  }
-  .signature-svg {
-    width: 240px;
-    height: 70px;
-  }
-  .signature-svg text {
-    font-size: 36px;
-  }
-  .invite-heart svg {
-    width: 80px;
-    height: 40px;
-  }
-}
-/* ------------------------------------------------
-   ✨ Animation nhẹ nhàng cho phần thiệp mời
---------------------------------------------------- */
-.fade-section {
-  opacity: 0;
-  transform: translateY(40px);
-  filter: blur(6px);
-  transition: all 1.2s ease;
-}
-
-.fade-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
-}
-#invite {
-  background-color: #fceef3;
-  color: #3a2e2e;
-  border: 2px solid #d9b95b;
-  border-radius: 28px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 60px 40px;
+/* ==============================
+   🌸 Countdown Section (Lễ Thành Hôn)
+============================== */
+#countdown-section,
+#engagement-countdown-section {
   text-align: center;
-}
-
-#invite h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #4a3838;
-  font-family: "Playfair Display", serif;
-  margin-bottom: 50px;
-  letter-spacing: 1.2px;
-}
-
-.invite-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 80px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.invite-side {
-  flex: 1;
-  min-width: 280px;
-}
-
-.invite-side h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #5a4545;
-  margin-bottom: 10px;
-}
-
-.invite-side p {
-  font-size: 1rem;
-  color: #6b5858;
-  margin-top: 8px;
-}
-
-/* SVG chữ ký */
-.signature-svg {
-  width: 320px;
-  height: 90px;
-  margin: 0 auto;
-  display: block;
-}
-.signature-svg text {
-  font-family: "Great Vibes", cursive;
-  font-size: 46px;
-  stroke-dasharray: 900;
-  stroke-dashoffset: 900;
-  animation: handwriting 3.8s ease forwards;
-  filter: drop-shadow(0 0 6px rgba(217,185,91,0.5));
-}
-
-/* Trái tim */
-.invite-heart svg {
-  width: 100px;
-  height: 50px;
-}
-.invite-heart path {
-  stroke: #caa85e;
-  stroke-width: 2;
-  fill: none;
-  stroke-linecap: round;
-}
-.heart-shape {
-  fill: #e7d3a2;
-  animation: heartPulse 2s infinite;
-}
-
-/* Ngày và cảm ơn */
-.invite-date p:first-child {
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: #4a3737;
-}
-.invite-date p:last-child {
-  font-style: italic;
-  font-size: 0.95rem;
-  color: #6b5858;
-}
-.invite-thanks {
-  max-width: 640px;
-  margin: 0 auto;
-}
-.invite-thanks p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #4a3737;
-}
-
-/* Hiệu ứng animation */
-@keyframes handwriting {
-  0% { stroke-dashoffset: 900; opacity: 0.4; }
-  100% { stroke-dashoffset: 0; opacity: 1; }
-}
-@keyframes heartPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .invite-wrapper {
-    gap: 50px;
-  }
-  .signature-svg {
-    width: 280px;
-    height: 80px;
-  }
-  .signature-svg text {
-    font-size: 40px;
-  }
-}
-@media (max-width: 600px) {
-  #invite {
-    padding: 40px 25px;
-  }
-  .invite-wrapper {
-    flex-direction: column;
-  }
-  .invite-heart svg {
-    width: 70px;
-    height: 35px;
-    margin: 20px auto;
-  }
-  .signature-svg text {
-    font-size: 38px;
-  }
-}
-/* Tiêu đề LỄ THÀNH HÔN */
-#invite h2 {
-  font-family: "Playfair Display SC", serif;
-  font-size: 2.4rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #4a3838;
-  margin-bottom: 50px;
-}
-
-/* 🌿 Tên riêng cô dâu – chú rể (màu đồng nhất với tiêu đề) */
-.signature-svg text {
-  font-family: "Great Vibes", cursive;
-  font-size: 52px;
-  fill: #4a3838;           /* màu trầm giống Lễ Thành Hôn */
-  stroke: none;
-  opacity: 0.95;
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1)); /* nhẹ nhàng, không bóng nhiều */
-  animation: handwriting 3.5s ease forwards;
-}
-
-
-/* 🌸 Địa điểm nhà trai / nhà gái */
-.invite-side p {
-  font-size: 1.6rem;              /* kích thước linh hoạt hơn (tương đương ~35px) */
-  color: #4a3a3a;                 /* cùng tone nâu trầm */
-  margin-top: 10px;
-  font-weight: 500;
-  letter-spacing: 0.4px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-/* 💻 Tự động điều chỉnh theo thiết bị */
-@media (max-width: 1024px) {
-  .invite-side p {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .invite-side p {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .invite-side p {
-    font-size: 1.4rem;
-  }
-}
-
-
-/* Shine animation (ánh sáng quét) */
-@keyframes handwriting {
-  0% { stroke-dashoffset: 900; opacity: 0.4; }
-  100% { stroke-dashoffset: 0; opacity: 1; }
-}
-
-/* 🌿 Animation mềm mại và tinh tế hơn khi phần thiệp vào giữa */
-.left-side,
-.right-side,
-.invite-heart,
-.invite-date,
-.invite-thanks {
-  opacity: 0;
-  transition: all 1.4s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: transform, opacity;
-}
-
-.left-side {
-  transform: translateX(-90px) scale(0.95);
-}
-
-.right-side {
-  transform: translateX(90px) scale(0.95);
-}
-
-.invite-heart {
-  transform: scale(0.8);
-}
-
-.invite-date,
-.invite-thanks {
-  transform: translateY(50px);
-}
-
-/* Khi phần thiệp xuất hiện */
-#invite.visible .left-side,
-#invite.visible .right-side,
-#invite.visible .invite-heart,
-#invite.visible .invite-date,
-#invite.visible .invite-thanks {
-  opacity: 1;
-  transform: translateX(0) translateY(0) scale(1);
-}
-
-/* Độ trễ hợp lý giữa các phần để nhìn tự nhiên */
-#invite.visible .left-side { transition-delay: 0.1s; }
-#invite.visible .right-side { transition-delay: 0.25s; }
-#invite.visible .invite-heart { transition-delay: 0.4s; }
-#invite.visible .invite-date { transition-delay: 0.55s; }
-#invite.visible .invite-thanks { transition-delay: 0.7s; }
-
-/* Hiệu ứng “thở” nhẹ sau khi dừng lại (tim đập nhè nhẹ) */
-#invite.visible .invite-heart svg {
-  animation: heartFloat 4s ease-in-out infinite;
-}
-
-@keyframes heartFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
-}
-
-/* 💍 Hiệu ứng khung tổng thể zoom nhẹ khi xuất hiện */
-#invite {
-  opacity: 0;
-  transform: scale(0.94);
-  transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity;
-}
-
-#invite.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Phối hợp với hiệu ứng chi tiết bên trong (đã thêm trước đó) */
-#invite.visible .left-side,
-#invite.visible .right-side,
-#invite.visible .invite-heart,
-#invite.visible .invite-date,
-#invite.visible .invite-thanks {
-  opacity: 1;
-  transform: translateX(0) translateY(0) scale(1);
-}
-
-/* Giữ hiệu ứng "thở" nhẹ cho trái tim */
-#invite.visible .invite-heart svg {
-  animation: heartFloat 4s ease-in-out infinite;
-}
-
-@keyframes heartFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
-}
-
-/* 🎁 QR Mừng cưới – Hộp quà */
-#qr-section {
-  text-align: center;
-  margin-top: 4rem;
-}
-
-#qr-section h2 {
-  font-size: 2rem;
-  color: #4a3838;
-  margin-bottom: 1.5rem;
-}
-
-/* Hộp quà */
-.gift-box-container {
-  position: relative;
-  display: inline-block;
-}
-
-.gift-btn {
-  background: none;
-  border: none;
-  font-size: 3rem;
-  cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.gift-btn:hover {
-  transform: scale(1.15) rotate(-5deg);
-}
-
-/* QR popup ẩn mặc định */
-.qr-popup {
-  position: absolute;
-  left: 50%;
-  top: -380px;
-  transform: translateX(-50%) translateY(30px) scale(0.95);
-  opacity: 0;
-  pointer-events: none;
-  background: #fff9fa;
-  border: 2px solid #e5c6b0;
-  border-radius: 16px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
-  padding: 16px;
-  transition: all 0.45s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.qr-popup.active {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0) scale(1);
-  pointer-events: auto;
-}
-
-.qr-box img {
-  width: 180px;
-  border-radius: 10px;
-}
-
-.qr-note {
-  margin-top: 10px;
-  font-size: 1rem;
-  color: #4a3a3a;
-}
-
-/* Hộp quà sáng nhẹ khi mở */
-.gift-btn.active {
-  animation: glowPulse 1.8s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-  0%, 100% { text-shadow: 0 0 6px #d8b678; }
-  50% { text-shadow: 0 0 14px #f5e6b2; }
-}
-
-/* Responsive cho mobile */
-@media (max-width: 600px) {
-  .qr-popup {
-    top: -300px;
-  }
-  .qr-box img {
-    width: 140px;
-  }
-}
-
-<<<<<<< HEAD
-=======
- /* 🌸 QR Mừng cưới ẩn trong hộp quà */
-#qr-section {
-  text-align: center;
-  margin-top: 4rem;
-}
-
-.gift-box-container {
-  position: relative;
-  display: inline-block;
-}
-
-.gift-btn {
-  background: none;
-  border: none;
-  font-size: 3rem;
-  cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.gift-btn:hover {
-  transform: scale(1.15) rotate(-5deg);
-}
-
-/* QR popup ẩn mặc định */
-.qr-popup {
-  position: absolute;
-  left: 50%;
-  top: -380px;
-  transform: translateX(-50%) translateY(30px) scale(0.95);
-  opacity: 0;
-  pointer-events: none;
-  background: #fff9fa;
-  border: 2px solid #e5c6b0;
-  border-radius: 16px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
-  padding: 16px;
-  transition: all 0.45s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10; /* quan trọng: đảm bảo QR không bị phần khác che */
-}
-
-/* Khi mở hộp quà */
-.qr-popup.active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0) scale(1);
-}
-
-/* Hộp quà sáng nhẹ khi mở */
-.gift-btn.active {
-  animation: glowPulse 1.8s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-  0%, 100% { text-shadow: 0 0 6px #d8b678; }
-  50% { text-shadow: 0 0 14px #f5e6b2; }
-}
-
-.qr-box img {
-  width: 180px;
-  border-radius: 10px;
-}
-
-.qr-note {
-  margin-top: 10px;
-  font-size: 1rem;
-  color: #4a3a3a;
-}
-
->>>>>>> 30e6f494b4c7c0005b1a7b08c05501a67680dd46
-/* COUNTDOWN */
-#countdown-section {
-  text-align: center;
-  margin: 4rem auto;
+  margin: 50px 20px;
 }
 
 .countdown-title {
-  font-size: 2rem;
-  letter-spacing: 3px;
-  font-weight: 700;
-  color: #3a3a3a;
-  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 2.5em;
+  color: #b79b55;
+  margin-bottom: 30px;
 }
 
-#countdown-box {
+#countdown-box,
+#engagement-countdown-box {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
 .time-box {
-  background: #f5f5f0;
-  border: 2px solid #b89f65;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-  padding: 1rem 1.5rem;
-  min-width: 90px;
-  transition: all 0.3s ease;
-}
-
-.time-box:hover {
-  transform: translateY(-5px);
+  background: #fff0f5cc;
+  padding: 20px 15px;
+  border-radius: 15px;
+  min-width: 80px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .time-box span {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #b79b55;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 2em;
+  color: #e91e63;
 }
 
 .time-box p {
-  margin: 0;
-  font-size: 1rem;
-  color: #4a4a4a;
-  letter-spacing: 2px;
-  font-weight: 600;
+  margin: 5px 0 0;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 0.9em;
+  color: #b79b55;
 }
 
-/* CALENDAR */
-#calendar-section {
-  text-align: center;
-  margin: 3rem auto;
-}
-
+/* ==============================
+   🌸 Calendar Section
+============================== */
 .calendar-envelope {
-  background: #fdf6f3;
-  border: 2px solid #8b2b2b;
-  border-radius: 12px;
-  padding: 1.5rem;
-  width: fit-content;
-  margin: 0 auto;
-  position: relative;
-  box-shadow: 0 8px 20px rgba(100,0,0,0.2);
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff0f5cc;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: 'Playfair Display SC', serif;
 }
 
 .calendar-header h2 {
-  color: #8b2b2b;
-  letter-spacing: 3px;
-  font-weight: 700;
+  font-size: 1.8em;
+  color: #b79b55;
+  margin-bottom: 15px;
 }
 
 .calendar-table {
+  width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  margin-bottom: 10px;
 }
 
 .calendar-table th,
 .calendar-table td {
-  width: 40px;
-  height: 40px;
+  padding: 8px;
   text-align: center;
-  border-radius: 6px;
-  font-weight: 600;
+  font-family: 'Playfair Display SC', serif;
+  color: #e91e63;
 }
 
-.calendar-table td {
-  color: #4a3a3a;
-}
+.calendar-table th { font-weight: 600; color: #b79b55; }
 
 .calendar-table td.heart-day {
   background-color: #b32d3e;
@@ -885,377 +217,84 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   right: 2px;
 }
 
-.wax-seal {
-  position: absolute;
-  bottom: -20px;
-  right: calc(50% - 18px);
-  font-size: 1.8rem;
-}
-/* Countdown section */
-#countdown-section {
-  text-align: center;
-  margin: 50px 0;
-}
+.wax-seal { font-size: 1.5em; margin-top: 10px; }
 
-#countdown-section .countdown-title {
-  font-family: 'Playfair Display SC', serif; /* giống hệt LỄ THÀNH HÔN */
-  font-size: 2.5em;
-  color: #b79b55;
-  margin-bottom: 30px;
-}
-
-#countdown-box {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.time-box {
-  background: #fff0f5cc;
-  padding: 20px 15px;
-  border-radius: 15px;
-  min-width: 80px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.time-box span {
+/* ==============================
+   🌸 Signature SVG
+============================== */
+.signature-svg {
+  width: 320px;
+  height: 90px;
+  margin: 0 auto;
   display: block;
-  font-family: 'Playfair Display SC', serif; /* giống hệt LỄ THÀNH HÔN */
-  font-size: 2em;
-  color: #e91e63;
 }
 
-.time-box p {
-  margin: 5px 0 0;
-  font-family: 'Playfair Display SC', serif; /* giống hệt LỄ THÀNH HÔN */
-  font-size: 0.9em;
-  color: #555;
+.signature-svg text {
+  font-family: "Great Vibes", cursive;
+  font-size: 52px;
+  fill: #4a3838;
+  stroke: none;
+  opacity: 0.95;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+  animation: handwriting 3.5s ease forwards;
 }
 
-/* 🎁 Hộp quà */
-.gift-box-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
+/* ==============================
+   🌸 Heart animation
+============================== */
+.invite-heart svg { width: 100px; height: 50px; }
+.invite-heart path {
+  stroke: #caa85e;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+.heart-shape { fill: #e7d3a2; animation: heartPulse 2s infinite; }
+
+@keyframes heartPulse {
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.15);}
 }
 
-.gift-btn {
-  background: none;
-  border: none;
-  font-size: 2.4rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+/* ==============================
+   🌸 Handwriting animation
+============================== */
+@keyframes handwriting {
+  0% { stroke-dashoffset: 900; opacity: 0.4; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
 }
 
-.gift-btn:hover {
-  transform: scale(1.15) rotate(-5deg);
-}
-
-/* 🎀 QR Popup (ẩn mặc định) */
-.qr-popup {
-  position: absolute;
-  top: -260px;
-  background: #fffafc;
-  border: 2px solid #e3c5b7;
+/* ==============================
+   🌸 Popup Countdown (ẩn) 
+============================== */
+#countdown-popup {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(255,240,245,0.95);
+  border: 2px solid #f7d9e3;
   border-radius: 16px;
-  padding: 14px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(20px) scale(0.95);
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.qr-popup img {
-  width: 160px;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Khi mở hộp quà */
-.qr-popup.active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0) scale(1);
-}
-
-/* Hiệu ứng bóng sáng quanh hộp quà khi mở */
-.gift-btn.active {
-  animation: glowPulse 1.8s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-  0%, 100% { text-shadow: 0 0 8px #d6b97b; }
-  50% { text-shadow: 0 0 18px #f5e6b2; }
-}
-
-.section-title {
-  font-family: 'Playfair Display SC', serif;
-  font-size: 2em; /* tiêu đề chính */
-  color: #b79b55; /* vàng kim */
+  padding: 15px 25px;
   text-align: center;
-  margin-bottom: 20px;
+  font-family: "Quicksand", sans-serif;
+  z-index: 1000;
+  animation: fadeInUp 1.2s ease;
+  backdrop-filter: blur(8px);
 }
 
-.section-title .english-title {
-  display: block;           /* xuống dòng */
-  font-family: 'Playfair Display SC', serif; /* cùng font */
-  font-size: 1.2em;         /* nhỏ hơn và gọn hơn */
-  color: #b79b55;           /* đồng màu vàng kim */
-  margin-top: 5px;
+#countdown-popup h3 {
+  color: #a34a6a;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
 }
 
-/* Responsive cho điện thoại */
-@media (max-width: 450px) {
-  .section-title {
-    font-size: 1.5em;      /* giảm kích thước tiêu đề chính */
-  }
-  .section-title .english-title {
-    font-size: 0.95em;     /* giảm kích thước bản tiếng Anh */
-  }
+#countdown-timer { font-size:1.1rem; color:#4b2e2b; font-weight:600; }
+
+@keyframes fadeInUp {
+  from { opacity:0; transform: translateY(40px); }
+  to { opacity:1; transform: translateY(0); }
 }
 
-
-/* Font đồng bộ Lễ Ăn Hỏi */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;600&display=swap');
-
-/* Countdown Section */
-#countdown-section {
-  text-align: center;
-  margin: 50px 20px;
-}
-
-.countdown-title {
-  font-family: 'Playfair Display SC', serif;
-  font-size: 2.5em;
-  color: #b79b55; /* vàng kim */
-  margin-bottom: 30px;
-}
-
-#countdown-box {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.time-box {
-  background: #fff0f5cc;
-  padding: 20px 15px;
-  border-radius: 15px;
-  min-width: 80px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  flex: 1 1 70px;
-}
-
-.time-box span {
-  display: block;
-  font-family: 'Playfair Display SC', serif;
-  font-size: 2em;
-  color: #e91e63; /* hồng nổi bật */
-}
-
-.time-box p {
-  margin: 5px 0 0;
-  font-family: 'Playfair Display SC', serif;
-  font-size: 0.9em;
-  color: #b79b55; /* vàng kim */
-}
-
-/* Calendar Section */
-.calendar-envelope {
-  max-width: 400px;
-  margin: 40px auto;
-  background: #fff0f5cc;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: center;
-  font-family: 'Playfair Display SC', serif;
-}
-
-.calendar-header h2 {
-  font-size: 1.8em;
-  color: #b79b55;
-  margin-bottom: 15px;
-}
-
-.calendar-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 10px;
-}
-
-.calendar-table th, .calendar-table td {
-  padding: 8px;
-  text-align: center;
-  font-family: 'Playfair Display SC', serif;
-  color: #e91e63; /* hồng nhẹ */
-}
-
-.calendar-table th {
-  font-weight: 600;
-  color: #b79b55;
-}
-
-.wax-seal {
-  font-size: 1.5em;
-  margin-top: 10px;
-}
-
-/* Responsive */
-@media (max-width: 500px) {
-  #countdown-box {
-    gap: 10px;
-  }
-  .time-box {
-    flex: 1 1 60px;
-    padding: 15px 10px;
-  }
-  .countdown-title {
-    font-size: 2em;
-  }
-  .calendar-envelope {
-    width: 90%;
-  }
-}
-
-
-/* Calendar Section Lễ Ăn Hỏi */
-#engagement-calendar-section .calendar-envelope {
-  max-width: 400px;
-  margin: 40px auto;
-  background: #fff0f5cc;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: center;
-  font-family: 'Playfair Display SC', serif;
-}
-
-#engagement-calendar-section .calendar-header h2 {
-  font-size: 1.8em;
-  color: #b79b55;
-  margin-bottom: 15px;
-}
-
-#engagement-calendar-section .calendar-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 10px;
-}
-
-#engagement-calendar-section .calendar-table th,
-#engagement-calendar-section .calendar-table td {
-  padding: 8px;
-  text-align: center;
-  font-family: 'Playfair Display SC', serif;
-  color: #e91e63; /* hồng nhẹ */
-}
-
-#engagement-calendar-section .calendar-table th {
-  font-weight: 600;
-  color: #b79b55;
-}
-
-#engagement-calendar-section .wax-seal {
-  font-size: 1.5em;
-  margin-top: 10px;
-}
-
-#engagement-countdown-section {
-  text-align: center;
-  margin: 40px 20px;
-}
-
-#engagement-countdown-section .countdown-title {
-  font-family: 'Playfair Display SC', serif;
-  font-size: 2em;
-  color: #b79b55; /* vàng kim */
-  margin-bottom: 20px;
-}
-
-#engagement-countdown-box {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap; /* gọn, không xuống dòng */
-  gap: 10px;
-  flex-wrap: wrap; /* khi màn hình nhỏ, sẽ wrap */
-}
-
-#engagement-countdown-box .time-box {
-  background: #fff0f5cc; /* nền nhẹ hồng/white */
-  padding: 15px 12px;
-  border-radius: 12px;
-  min-width: 60px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#engagement-countdown-box .time-box span {
-  font-family: 'Playfair Display SC', serif;
-  font-size: 1.8em;
-  color: #e91e63; /* hồng nổi bật */
-}
-
-#engagement-countdown-box .time-box p {
-  margin: 4px 0 0;
-  font-family: 'Playfair Display SC', serif;
-  font-size: 0.85em;
-  color: #b79b55; /* vàng kim */
-}
-
-/* Responsive cho mobile */
-@media (max-width: 450px) {
-  #engagement-countdown-box {
-    gap: 6px;
-  }
-  #engagement-countdown-box .time-box {
-    padding: 10px 8px;
-    min-width: 50px;
-  }
-  #engagement-countdown-box .time-box span {
-    font-size: 1.5em;
-  }
-}
-
-.invite-date {
-  text-align: center;
-  margin: 20px 0;
-  font-family: 'Playfair Display SC', serif; /* đồng bộ font */
-  color: #b79b55; /* vàng kim */
-}
-
-.invite-date p {
-  margin: 5px 0;
-}
-
-.invite-date .viet-date,
-.invite-date .viet-lunar {
-  font-size: 1.2em; /* lớn bằng phần địa điểm */
-  font-weight: 600;
-}
-
-.invite-date .eng-date,
-.invite-date .eng-lunar {
-  font-size: 1em; /* nhỏ hơn một chút */
-  font-weight: 400;
-  margin-top: 2px;
-  display: block;
-}
-
-/* Responsive cho mobile */
-@media (max-width: 450px) {
-  .invite-date .viet-date,
-  .invite-date .viet-lunar {
-    font-size: 1em;
-  }
-  .invite-date .eng-date,
-  .invite-date .eng-lunar {
-    font-size: 0.9em;
-  }
-}
+/* ==============================
+   🌸
