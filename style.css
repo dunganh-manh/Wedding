@@ -1351,16 +1351,52 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   z-index: 2;
 }
 
+/* Popup ẩn mặc định */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px; right: 20px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* QR layout */
 .qr-codes {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
 }
 .qr img {
-  width: 150px; /* chỉnh kích thước QR theo ý muốn */
+  width: 150px;
   height: 150px;
 }
 .qr h4 {
   text-align: center;
   margin-bottom: 5px;
+}
+
+/* Gift icon */
+.gift-icon {
+  cursor: pointer;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
 }
