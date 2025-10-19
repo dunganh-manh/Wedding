@@ -173,20 +173,20 @@ const giftIcon = document.getElementById('gift-icon');
 const qrPopup = document.getElementById('qr-popup');
 const closeBtn = qrPopup.querySelector('.close-btn');
 
-// Mở popup khi click vào hộp quà
+// Mở popup
 giftIcon.addEventListener('click', () => {
-  qrPopup.style.display = 'flex';
+  qrPopup.classList.add('show');
 });
 
-// Đóng popup khi click nút x
+// Đóng popup khi click nút ×
 closeBtn.addEventListener('click', () => {
-  qrPopup.style.display = 'none';
+  qrPopup.classList.remove('show');
 });
 
-// Đóng popup khi click ngoài nội dung
+// Đóng popup khi click ra ngoài nội dung
 window.addEventListener('click', (e) => {
   if(e.target === qrPopup){
-    qrPopup.style.display = 'none';
+    qrPopup.classList.remove('show');
   }
 });
 
