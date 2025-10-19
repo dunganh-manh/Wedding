@@ -1351,57 +1351,84 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   z-index: 2;
 }
 
-/* Popup ẩn mặc định */
-.popup {
-  display: none; /* Ẩn mặc định cho mọi thiết bị */
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(8px); /* Blur hiện đại */
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* Popup nội dung */
-.popup-content {
-  background: rgba(255,255,255,0.9);
-  padding: 20px;
-  border-radius: 15px;
+#qr-section {
+  padding: 40px 20px;
   text-align: center;
-  max-width: 90%;
-  width: 350px; /* Giới hạn kích thước trên desktop */
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
 }
 
-/* Close button */
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  cursor: pointer;
-  font-size: 20px;
+#qr-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  color: #333;
 }
 
-/* QR layout */
-.qr-codes {
+.qr-wrapper {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; /* Mobile xếp 2 QR xuống dưới */
-  margin-top: 20px;
-}
-.qr-codes img {
-  width: 120px;
-  height: 120px;
-  margin: 5px;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; /* Mobile xuống dòng */
 }
 
-/* Gift icon */
-.gift-icon {
-  cursor: pointer;
-  font-size: 50px;
-  text-align: center;
-  margin: 20px auto;
+.qr-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 20px;
+  width: 180px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 1s ease;
+  backdrop-filter: blur(8px); /* hiệu ứng blur nhẹ */
+  opacity: 0; /* ẩn ban đầu để fade-in */
+}
+
+.qr-card h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+.qr-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.qr-name {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #222;
+}
+
+/* Hover effect hiện đại */
+.qr-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.qr-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive nhỏ hơn 500px */
+@media (max-width: 500px) {
+  .qr-card {
+    width: 140px;
+    padding: 15px;
+  }
+  .qr-card img {
+    width: 120px;
+    height: 120px;
+  }
+  .qr-name {
+    font-size: 14px;
+  }
+}
+
+/* Fade-in khi scroll */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
