@@ -1260,21 +1260,3 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   }
 }
 
-/* Font Dancing Script cho các đoạn nội dung */
-.fade-section p {
-  font-family: 'Dancing Script', cursive;
-  font-weight: 400;         /* nhẹ nhàng, không quá dày */
-  font-size: 1rem;           /* vừa phải, dễ đọc trên mobile */
-  line-height: 1.6;          /* khoảng cách dòng thoáng */
-  color: #333;
-  margin-bottom: 15px;
-  text-align: center;        /* căn giữa đẹp mắt */
-}
-
-/* Tiêu đề section vẫn giữ font hiện tại */
-.fade-section h2 {
-  font-family: 'Playfair Display SC', serif;
-  font-weight: 600;
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-}
