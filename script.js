@@ -31,31 +31,6 @@ const io = new IntersectionObserver((entries)=>{
 }, {threshold:0.15});
 sections.forEach(s=>io.observe(s));
 
-// --- Countdown hai chiều (trước & sau ngày cưới) ---
-function updateCountdown() {
-  const weddingDate = new Date("2025-10-30T00:00:00").getTime();
-  const now = new Date().getTime();
-  const distance = weddingDate - now;
-
-  const isPast = distance < 0;
-  const diff = Math.abs(distance);
-
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-  if (isPast) {
-    document.getElementById("countdown-timer").innerText =
-      `💐 Đã trôi qua ${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây kể từ ngày cưới 💐`;
-  } else {
-    document.getElementById("countdown-timer").innerText =
-      `Còn ${days} ngày ${hours} giờ ${minutes} phút ${seconds} 💞`;
-  }
-}
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
 
 // --- Hiệu ứng pháo hoa giấy khi trang load ---
 window.addEventListener("load", () => {
