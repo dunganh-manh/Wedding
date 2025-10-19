@@ -1165,62 +1165,72 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   margin-top: 10px;
 }
 
-#engagement-countdown-section {
-  text-align: center;
-  margin: 40px 20px;
-}
-
-#engagement-countdown-section .countdown-title {
-  font-family: 'Playfair Display SC', serif;
-  font-size: 2em;
-  color: #b79b55; /* vàng kim */
-  margin-bottom: 20px;
-}
-
-#engagement-countdown-box {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap; /* gọn, không xuống dòng */
-  gap: 10px;
-  flex-wrap: wrap; /* khi màn hình nhỏ, sẽ wrap */
-}
-
-#engagement-countdown-box .time-box {
-  background: #fff0f5cc; /* nền nhẹ hồng/white */
-  padding: 15px 12px;
-  border-radius: 12px;
-  min-width: 60px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+/* Box countdown chính giữa */
+#countdown-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;    
+  justify-content: center; 
+  text-align: center;
+  padding: 40px 20px;
 }
 
-#engagement-countdown-box .time-box span {
-  font-family: 'Playfair Display SC', serif;
-  font-size: 1.8em;
-  color: #e91e63; /* hồng nổi bật */
+/* Tiêu đề */
+.countdown-title {
+  font-family: 'Inter', sans-serif; /* font hiện đại, nhẹ */
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #333;
 }
 
-#engagement-countdown-box .time-box p {
-  margin: 4px 0 0;
-  font-family: 'Playfair Display SC', serif;
-  font-size: 0.85em;
-  color: #b79b55; /* vàng kim */
+/* Hộp thời gian */
+#countdown-box {
+  display: flex;
+  flex-wrap: wrap;       
+  justify-content: center; 
+  gap: 15px;              
+}
+
+/* Từng ô thời gian */
+.time-box {
+  background: linear-gradient(135deg, #ffd1dc, #f7d9e3);
+  padding: 20px 25px;
+  border-radius: 12px;
+  min-width: 70px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.time-box span {
+  font-size: 2rem;
+  font-weight: 600;
+  display: block;
+}
+
+.time-box p {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
 }
 
 /* Responsive cho mobile */
-@media (max-width: 450px) {
-  #engagement-countdown-box {
-    gap: 6px;
+@media (max-width: 480px) {
+  #countdown-box {
+    gap: 10px;
   }
-  #engagement-countdown-box .time-box {
-    padding: 10px 8px;
-    min-width: 50px;
+
+  .time-box {
+    min-width: 55px;
+    padding: 15px 18px;
   }
-  #engagement-countdown-box .time-box span {
-    font-size: 1.5em;
+
+  .time-box span {
+    font-size: 1.5rem;
+  }
+
+  .countdown-title {
+    font-size: 1.5rem;
   }
 }
-
-
