@@ -1312,27 +1312,46 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
 
 /* Responsive: hiển thị ngang trên màn hình lớn */
 @media screen and (min-width: 768px) {
-  .wedding-card {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .timeline-line {
-    left: auto;
-    top: 50%;
-    bottom: auto;
-    right: 20px;
-    width: 100%;
-    height: 4px;
-    transform: translateY(-50%);
-  }
-  .event-block {
-    flex: 1;
-    margin: 0 10px;
-    text-align: left;
-  }
-  .event-block::before {
-    left: 0;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+.wedding-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(#ffd1dc, #f7d9e3);
+  transform: translateX(-50%);
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.event-block {
+  position: relative;
+  background: #ffffffdd;
+  border-radius: 20px;
+  padding: 20px 15px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  z-index: 1;
+  width: 80%;
+}
+
+.event-block::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  background: #b79b55;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
 }
