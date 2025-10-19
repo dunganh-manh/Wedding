@@ -176,17 +176,18 @@ giftWrappers.forEach(wrapper => {
   const popup = wrapper.querySelector('.popup');
   const closeBtn = wrapper.querySelector('.close-btn');
 
+  // Khi bấm vào hộp quà
   gift.addEventListener('click', () => {
     popup.style.display = 'flex';
   });
 
-  // Click nút đóng
+  // Khi bấm nút đóng
   closeBtn.addEventListener('click', () => {
     popup.style.display = 'none';
   });
 
-  // Click ra ngoài popup-content để đóng
-  popup.addEventListener('click', function(e) {
+  // Khi bấm ra ngoài popup-content
+  popup.addEventListener('click', (e) => {
     if (!e.target.closest('.popup-content')) {
       popup.style.display = 'none';
     }
