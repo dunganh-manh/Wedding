@@ -169,24 +169,27 @@ rsvpForm.addEventListener('submit', function(e) {
   });
 });
 
-const giftIcon = document.getElementById('gift-icon');
-const qrPopup = document.getElementById('qr-popup');
-const closeBtn = qrPopup.querySelector('.close-btn');
+const giftIcon = document.querySelector('.gift-icon');
+const popup = document.querySelector('.popup');
+const closeBtn = document.querySelector('.close-btn');
 
-// Mở popup khi click vào hộp quà
+// Mở popup với fade-in
 giftIcon.addEventListener('click', () => {
-  qrPopup.style.display = 'flex';
+  popup.classList.add('show');
 });
 
-// Đóng popup khi click nút x
-closeBtn.addEventListener('click', () => {
-  qrPopup.style.display = 'none';
-});
+// Đóng popup với fade-out
+const closePopup = () => {
+  popup.classList.remove('show');
+};
 
-// Đóng popup khi click ngoài nội dung
-window.addEventListener('click', (e) => {
-  if(e.target === qrPopup){
-    qrPopup.style.display = 'none';
+// Đóng khi bấm nút X
+closeBtn.addEventListener('click', closePopup);
+
+// Đóng khi bấm ra ngoài popup-content
+popup.addEventListener('click', (e) => {
+  if (e.target === popup) {
+    closePopup();
   }
 });
 

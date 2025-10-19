@@ -1351,28 +1351,47 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   z-index: 2;
 }
 
-/* Popup ẩn mặc định */
+/* Popup overlay với nền blur và transition */
 .popup {
-  display: none;
+  display: flex; /* luôn flex để căn giữa */
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6); /* nền mờ */
-  justify-content: center;
-  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;           /* bắt đầu trong suốt */
+  visibility: hidden;   /* ẩn khỏi layout */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 1000;
 }
 
-.popup-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 400px;        /* khung popup nhỏ */
-  max-width: 90%;      /* responsive với màn hình nhỏ */
-  position: relative;  /* để close-btn nằm đúng */
+/* Khi active */
+.popup.show {
+  opacity: 1;
+  visibility: visible;
 }
 
+/* Popup content */
+.popup-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  transform: scale(0.95);       /* nhỏ trước khi hiện */
+  transition: transform 0.3s ease;
+}
+
+/* Khi popup show, phóng to content */
+.popup.show .popup-content {
+  transform: scale(1);
+}
 
 /* Close button */
 .close-btn {
