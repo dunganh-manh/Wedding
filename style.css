@@ -1223,3 +1223,39 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   }
 }
 
+.invite-date {
+  text-align: center;
+  margin: 20px 0;
+  font-family: 'Playfair Display SC', serif; /* đồng bộ font */
+  color: #b79b55; /* vàng kim */
+}
+
+.invite-date p {
+  margin: 5px 0;
+}
+
+.invite-date .viet-date,
+.invite-date .viet-lunar {
+  font-size: 1.2em; /* lớn bằng phần địa điểm */
+  font-weight: 600;
+}
+
+.invite-date .eng-date,
+.invite-date .eng-lunar {
+  font-size: 1em; /* nhỏ hơn một chút */
+  font-weight: 400;
+  margin-top: 2px;
+  display: block;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 450px) {
+  .invite-date .viet-date,
+  .invite-date .viet-lunar {
+    font-size: 1em;
+  }
+  .invite-date .eng-date,
+  .invite-date .eng-lunar {
+    font-size: 0.9em;
+  }
+}
