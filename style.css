@@ -1110,3 +1110,104 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
     width: 90%;
   }
 }
+
+/* Countdown Section Lễ Ăn Hỏi */
+#engagement-countdown-section {
+  text-align: center;
+  margin: 50px 20px;
+}
+
+#engagement-countdown-section .countdown-title {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 2.5em;
+  color: #b79b55; /* vàng kim */
+  margin-bottom: 30px;
+}
+
+#engagement-countdown-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+#engagement-countdown-box .time-box {
+  background: #fff0f5cc;
+  padding: 20px 15px;
+  border-radius: 15px;
+  min-width: 70px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: 1 1 60px;
+}
+
+#engagement-countdown-box .time-box span {
+  display: block;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 2em;
+  color: #e91e63; /* hồng nổi bật */
+}
+
+#engagement-countdown-box .time-box p {
+  margin: 5px 0 0;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 0.9em;
+  color: #b79b55; /* vàng kim */
+}
+
+/* Calendar Section Lễ Ăn Hỏi */
+#engagement-calendar-section .calendar-envelope {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff0f5cc;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: 'Playfair Display SC', serif;
+}
+
+#engagement-calendar-section .calendar-header h2 {
+  font-size: 1.8em;
+  color: #b79b55;
+  margin-bottom: 15px;
+}
+
+#engagement-calendar-section .calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+#engagement-calendar-section .calendar-table th,
+#engagement-calendar-section .calendar-table td {
+  padding: 8px;
+  text-align: center;
+  font-family: 'Playfair Display SC', serif;
+  color: #e91e63; /* hồng nhẹ */
+}
+
+#engagement-calendar-section .calendar-table th {
+  font-weight: 600;
+  color: #b79b55;
+}
+
+#engagement-calendar-section .wax-seal {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  #engagement-countdown-box {
+    gap: 10px;
+  }
+  #engagement-countdown-box .time-box {
+    padding: 15px 10px;
+  }
+  #engagement-countdown-section .countdown-title {
+    font-size: 2em;
+  }
+  #engagement-calendar-section .calendar-envelope {
+    width: 90%;
+  }
+}

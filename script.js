@@ -188,3 +188,24 @@ if (giftBtn && qrPopup) {
   });
 }
 
+// Countdown Lễ Ăn Hỏi
+const engagementDate = new Date("October 26, 2025 00:00:00").getTime();
+
+function updateEngagementCountdown() {
+  const now = new Date().getTime();
+  const distance = engagementDate - now;
+
+  const days = Math.floor(distance / (1000*60*60*24));
+  const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+  const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+  document.getElementById("days-engagement").textContent = String(days).padStart(2,"0");
+  document.getElementById("hours-engagement").textContent = String(hours).padStart(2,"0");
+  document.getElementById("minutes-engagement").textContent = String(minutes).padStart(2,"0");
+  document.getElementById("seconds-engagement").textContent = String(seconds).padStart(2,"0");
+}
+
+// Cập nhật mỗi giây
+updateEngagementCountdown();
+setInterval(updateEngagementCountdown, 1000);
