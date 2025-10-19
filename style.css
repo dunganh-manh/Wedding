@@ -1338,15 +1338,3 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   border-radius: 8px;
   z-index: 2; /* đè lên timeline */
 }
-
-.timeline-dot {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 16px;
-  background: #b79b55;
-  border-radius: 50%;
-  margin: -8px 0; /* canh giữa khoảng giữa 2 block */
-  z-index: 2;
-}
