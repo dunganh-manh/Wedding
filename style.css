@@ -1154,18 +1154,60 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   margin-top: 10px;
 }
 
-/* Responsive */
-@media (max-width: 500px) {
+#engagement-countdown-section {
+  text-align: center;
+  margin: 40px 20px;
+}
+
+#engagement-countdown-section .countdown-title {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 2em;
+  color: #b79b55; /* vàng kim */
+  margin-bottom: 20px;
+}
+
+#engagement-countdown-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap; /* gọn, không xuống dòng */
+  gap: 10px;
+  flex-wrap: wrap; /* khi màn hình nhỏ, sẽ wrap */
+}
+
+#engagement-countdown-box .time-box {
+  background: #fff0f5cc; /* nền nhẹ hồng/white */
+  padding: 15px 12px;
+  border-radius: 12px;
+  min-width: 60px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#engagement-countdown-box .time-box span {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 1.8em;
+  color: #e91e63; /* hồng nổi bật */
+}
+
+#engagement-countdown-box .time-box p {
+  margin: 4px 0 0;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 0.85em;
+  color: #b79b55; /* vàng kim */
+}
+
+/* Responsive cho mobile */
+@media (max-width: 450px) {
   #engagement-countdown-box {
-    gap: 10px;
+    gap: 6px;
   }
   #engagement-countdown-box .time-box {
-    padding: 15px 10px;
+    padding: 10px 8px;
+    min-width: 50px;
   }
-  #engagement-countdown-section .countdown-title {
-    font-size: 2em;
-  }
-  #engagement-calendar-section .calendar-envelope {
-    width: 90%;
+  #engagement-countdown-box .time-box span {
+    font-size: 1.5em;
   }
 }
