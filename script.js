@@ -169,22 +169,33 @@ rsvpForm.addEventListener('submit', function(e) {
   });
 });
 
+const giftIcon = document.querySelector('.gift-icon');
 const popup = document.querySelector('.popup');
-const giftIcons = document.querySelectorAll('.gift-icon'); // nếu có nhiều hộp quà
+const closeBtn = document.querySelector('.close-btn');
 
-giftIcons.forEach(icon => {
-  icon.addEventListener('click', () => {
-    const qr = icon.nextElementSibling; // QR codes ngay sau icon
-    qr.style.display = 'flex';         // hiện QR codes
-    popup.style.display = 'flex';      // hiện popup
-  });
+// Mở popup với fade-in
+giftIcon.addEventListener('click', () => {
+  popup.classList.add('show');
 });
 
-// Click ngoài popup-content để đóng
-popup.addEventListener('click', function(e) {
-  if (!e.target.closest('.popup-content')) {
-    popup.style.display = 'none';
-    document.querySelectorAll('.qr-codes').forEach(qr => qr.style.display = 'none'); // ẩn QR khi đóng
+// Đóng popup với fade-out
+const closePopup = () => {
+  popup.classList.remove('show');
+};
+
+// Đóng khi bấm nút X
+closeBtn.addEventListener('click', closePopup);
+
+// Đóng khi bấm ra ngoài popup-content
+popup.addEventListener('click', (e) => {
+  if (e.target === popup) {
+    closePopup();
+  }
+});
+
+popup.addEventListener('click', e => {
+  if (e.target === popup) { // chỉ click bên ngoài popup-content
+    popup.classList.remove('show');
   }
 });
 
