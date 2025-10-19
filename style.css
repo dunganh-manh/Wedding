@@ -992,20 +992,31 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
 }
 
 .section-title {
-  font-family: 'Playfair Display SC', serif; /* giống LỄ ĂN HỎI */
-  font-size: 2.5em;
-  color: #b79b55; /* màu vàng kim giống LỄ ĂN HỎI */
+  font-family: 'Playfair Display SC', serif;
+  font-size: 2em; /* tiêu đề chính */
+  color: #b79b55; /* vàng kim */
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .section-title .english-title {
-  display: block;       /* xuống dòng */
-  font-family: 'Playfair Display SC', serif; /* cùng font với tiếng Việt */
-  font-size: 1.5em;     /* nhỏ hơn một chút để phân biệt */
-  color: #b79b55;       /* cùng màu vàng kim */
+  display: block;           /* xuống dòng */
+  font-family: 'Playfair Display SC', serif; /* cùng font */
+  font-size: 1.2em;         /* nhỏ hơn và gọn hơn */
+  color: #b79b55;           /* đồng màu vàng kim */
   margin-top: 5px;
 }
+
+/* Responsive cho điện thoại */
+@media (max-width: 450px) {
+  .section-title {
+    font-size: 1.5em;      /* giảm kích thước tiêu đề chính */
+  }
+  .section-title .english-title {
+    font-size: 0.95em;     /* giảm kích thước bản tiếng Anh */
+  }
+}
+
 
 /* Font đồng bộ Lễ Ăn Hỏi */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;600&display=swap');
@@ -1211,3 +1222,4 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
     font-size: 1.5em;
   }
 }
+
