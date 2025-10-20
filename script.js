@@ -137,27 +137,6 @@ function generateCalendar(month, year) {
 }
 generateCalendar(9, 2025); // tháng 10 = index 9
 
-const rsvpForm = document.getElementById('rsvp-form');
-const formMsg = document.getElementById('form-msg');
-
-rsvpForm.addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const formData = new FormData(rsvpForm);
-  const url = "https://forms.gle/ZeDE4monCdEqrpWG8"; // Thay FORM_ID_HERE
-
-  fetch(url, {
-    method: "POST",
-    mode: "no-cors",
-    body: formData
-  }).then(() => {
-    formMsg.textContent = "Cảm ơn bạn! 💖 Chúng tôi đã nhận thông tin.";
-    rsvpForm.reset();
-  }).catch(err => {
-    console.error(err);
-    formMsg.textContent = "Đã có lỗi xảy ra. Vui lòng thử lại sau.";
-  });
-});
 
 const faders = document.querySelectorAll('.fade-in');
 
