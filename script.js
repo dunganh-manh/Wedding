@@ -164,7 +164,8 @@ lightbox.addEventListener("click", () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
+// --- Firebase Config ---
+// Dùng config của bạn trong Firebase console
 const firebaseConfig = {
   apiKey: "AIzaSyDenkJA2mAK5UUiBDli5mt8CFUKjXMtmTQ",
   authDomain: "wedding-wishes-3985c.firebaseapp.com",
@@ -172,54 +173,42 @@ const firebaseConfig = {
   projectId: "wedding-wishes-3985c",
   storageBucket: "wedding-wishes-3985c.firebasestorage.app",
   messagingSenderId: "391144044053",
-  appId: "1:391144044053:web:ec2399ba37eb7d0043801c",
-  measurementId: "G-TCNDCR3BHK"
+  appId: "G-TCNDCR3BHK"
 };
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
 
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
+// --- Lưu lời chúc ---
+const form = document.getElementById("rsvp-form");
+const wishList = document.getElementById("wishList");
 
-  const form = document.getElementById("rsvp-form");
-  const list = document.getElementById("wishList");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-  if (!form || !list) {
-    console.error("Không tìm thấy form hoặc danh sách trong DOM");
+  const name = document.getElementById("guestName").value.trim();
+  const message = document.getElementById("guestMessage").value.trim();
+  if (!name || !message) return;
+
+  db.ref("wishes").push({ name, message, time: new Date().toISOString() });
+  form.reset();
+});
+
+// --- Hiển thị lời chúc ---
+db.ref("wishes").on("value", (snapshot) => {
+  const data = snapshot.val();
+  wishList.innerHTML = "";
+
+  if (!data) {
+    wishList.innerHTML = "<p>Chưa có lời chúc nào 💌</p>";
     return;
   }
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const nameInput = document.getElementById("guestName");
-    const msgInput = document.getElementById("guestMessage");
-    if (!nameInput || !msgInput) {
-      console.error("Không tìm thấy input trong DOM");
-      return;
-    }
-
-    const name = nameInput.value.trim();
-    const message = msgInput.value.trim();
-    if (!name || !message) return;
-
-    db.ref("wishes").push({
-      name,
-      message,
-      time: new Date().toISOString()
-    });
-
-    form.reset();
-  });
-
-  db.ref("wishes").on("value", (snapshot) => {
-    list.innerHTML = "";
-    snapshot.forEach((child) => {
-      const data = child.val();
+  Object.values(data)
+    .reverse()
+    .forEach((item) => {
       const div = document.createElement("div");
-      div.classList.add("wish-item");
-      div.innerHTML = `
-        <strong>${data.name}</strong>
-        <p>${data.message}</p>
-      `;
-      list.prepend(div);
+      div.className = "wish-item";
+      div.innerHTML = `<h4>${item.name}</h4><p>${item.message}</p>`;
+      wishList.appendChild(div);
     });
-  });
 });

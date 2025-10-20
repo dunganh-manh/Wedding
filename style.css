@@ -1575,3 +1575,31 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
     transform: translateY(0);
   }
 }
+
+.wish-list {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wish-item {
+  background: #fff8fa;
+  border: 1px solid #f4c5d3;
+  border-radius: 10px;
+  padding: 12px 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.wish-item h4 {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  color: #a34a6a;
+}
+
+.wish-item p {
+  margin: 0;
+  color: #4b2e2b;
+  font-size: 0.95rem;
+}
