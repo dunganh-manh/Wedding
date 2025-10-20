@@ -173,7 +173,8 @@ const firebaseConfig = {
   projectId: "wedding-wishes-3985c",
   storageBucket: "wedding-wishes-3985c.firebasestorage.app",
   messagingSenderId: "391144044053",
-  appId: "G-TCNDCR3BHK"
+  appId: "1:391144044053:web:ec2399ba37eb7d0043801c"
+  measurementId: "G-TCNDCR3BHK"
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
