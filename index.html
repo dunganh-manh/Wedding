@@ -192,21 +192,24 @@
 <h3>Cám ơn tình cảm của mọi người rất nhiều!</h3>
 <h3>We sincerely thank everyone for the wonderful gifts you’ve given us 💖</h3>
 
-  <section id="rsvp" class="fade-section">
-    <h2>Xác nhận tham dự</h2>
-    <form id="rsvp-form">
-  <input type="text" id="guestName" name="entry.2012345678" placeholder="Họ và tên" required>
-  <select id="guestStatus" name="entry.3098765432" required>
-    <option value="">Chọn trạng thái</option>
-    <option value="yes">Tôi sẽ tham dự</option>
-    <option value="no">Rất tiếc, tôi không thể</option>
-  </select>
-  <textarea id="guestMessage" name="entry.4076543210" placeholder="Gửi lời chúc..." rows="3"></textarea>
-  <button type="submit">Gửi</button>
-</form>
-<p id="form-msg" class="form-msg"></p>
+<!-- Sổ lưu bút -->
+<section id="wishes" class="fade-section">
+  <h2>Sổ Lưu Bút</h2>
 
-  </section>
+  <form id="rsvp-form" class="wish-form">
+    <input type="text" id="guestName" name="name" placeholder="Tên của bạn *" required>
+    <textarea id="guestMessage" name="message" placeholder="Nhập lời chúc của bạn *" required></textarea>
+    <button type="submit">Gửi lời chúc</button>
+  </form>
+
+  <div id="wishList" class="wish-list"></div>
+</section>
+
+<!-- Firebase SDK (giữ nguyên thứ tự này) -->
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-database-compat.js"></script>
+<script src="script.js"></script>
+
 <h2 style="font-size: 2.5rem; color: #c75274;">囍</h2>
   <section id="map" class="fade-section">
     <h2>Quãng đường di chuyển</h2>

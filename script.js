@@ -195,3 +195,56 @@ galleryImages.forEach(img => {
 lightbox.addEventListener("click", () => {
   lightbox.classList.remove("active");
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // --- Cấu hình Firebase ---
+  const firebaseConfig = {
+  apiKey: "AIzaSyDenkJA2mAK5UUiBDli5mt8CFUKjXMtmTQ",
+  authDomain: "wedding-wishes-3985c.firebaseapp.com",
+  databaseURL: "https://wedding-wishes-3985c-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "wedding-wishes-3985c",
+  storageBucket: "wedding-wishes-3985c.firebasestorage.app",
+  messagingSenderId: "391144044053",
+  appId: "1:391144044053:web:ec2399ba37eb7d0043801c",
+  measurementId: "G-TCNDCR3BHK"
+};
+
+  // --- Khởi tạo Firebase ---
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  const form = document.getElementById("rsvp-form");
+  const list = document.getElementById("wishList");
+
+  // --- Gửi lời chúc ---
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("guestName").value.trim();
+    const message = document.getElementById("guestMessage").value.trim();
+    if (!name || !message) return;
+
+    db.ref("wishes").push({
+      name,
+      message,
+      time: new Date().toISOString()
+    });
+
+    form.reset();
+  });
+
+  // --- Hiển thị realtime ---
+  db.ref("wishes").on("value", (snapshot) => {
+    list.innerHTML = "";
+    snapshot.forEach((child) => {
+      const data = child.val();
+      const div = document.createElement("div");
+      div.classList.add("wish-item");
+      div.innerHTML = `
+        <strong>${data.name}</strong>
+        <p>${data.message}</p>
+      `;
+      list.prepend(div);
+    });
+  });
+});
