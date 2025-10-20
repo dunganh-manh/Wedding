@@ -177,30 +177,39 @@ lightbox.addEventListener("click", () => {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // --- Cấu hình Firebase ---
-  const firebaseConfig = {
-  apiKey: "AIzaSyDenkJA2mAK5UUiBDli5mt8CFUKjXMtmTQ",
-  authDomain: "wedding-wishes-3985c.firebaseapp.com",
-  databaseURL: "https://wedding-wishes-3985c-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "wedding-wishes-3985c",
-  storageBucket: "wedding-wishes-3985c.firebasestorage.app",
-  messagingSenderId: "391144044053",
-  appId: "1:391144044053:web:ec2399ba37eb7d0043801c",
-  measurementId: "G-TCNDCR3BHK"
+const firebaseConfig = {
+  apiKey: "AIzaSyCFZ1zwjQo6KlXvo8WEbDXtExf8iQW_ZGo",
+  authDomain: "wedding-597fc.firebaseapp.com",
+  databaseURL: "https://wedding-597fc-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "wedding-597fc",
+  storageBucket: "wedding-597fc.firebasestorage.app",
+  messagingSenderId: "731212784041",
+  appId: "1:731212784041:web:002751645930bfeea4a4b8",
+  measurementId: "G-F1LLKT45LG"
 };
 
-  // --- Khởi tạo Firebase ---
   firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
 
   const form = document.getElementById("rsvp-form");
   const list = document.getElementById("wishList");
 
-  // --- Gửi lời chúc ---
+  if (!form || !list) {
+    console.error("Không tìm thấy form hoặc danh sách trong DOM");
+    return;
+  }
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const name = document.getElementById("guestName").value.trim();
-    const message = document.getElementById("guestMessage").value.trim();
+    const nameInput = document.getElementById("guestName");
+    const msgInput = document.getElementById("guestMessage");
+    if (!nameInput || !msgInput) {
+      console.error("Không tìm thấy input trong DOM");
+      return;
+    }
+
+    const name = nameInput.value.trim();
+    const message = msgInput.value.trim();
     if (!name || !message) return;
 
     db.ref("wishes").push({
@@ -212,7 +221,6 @@ document.addEventListener("DOMContentLoaded", function () {
     form.reset();
   });
 
-  // --- Hiển thị realtime ---
   db.ref("wishes").on("value", (snapshot) => {
     list.innerHTML = "";
     snapshot.forEach((child) => {
