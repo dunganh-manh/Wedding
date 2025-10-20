@@ -101,7 +101,7 @@ function updateCountdown() {
       `💐 Đã trôi qua ${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây kể từ ngày cưới 💐`;
   } else {
     document.getElementById("countdown-timer").innerText =
-      `${days} days ${hours} hours ${minutes} minutes ${seconds} 💞`;
+      `${days} days ${hours} hours ${minutes} minutes ${seconds} 💍`;
   }
 }
 
