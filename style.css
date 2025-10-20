@@ -1543,6 +1543,27 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   background-color: #f5c8d8;
 }
 
+.wish-list {
+  width: 90%;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.wish-item {
+  border: 1px solid #f3c9d4;
+  border-radius: 10px;
+  background: #fff5f7;
+  padding: 10px 16px;
+  margin-bottom: 12px;
+  animation: fadeInUp 0.4s ease-in;
+  text-align: left;
+}
+
+.wish-item strong {
+  color: #c75274;
+  display: block;
+  margin-bottom: 6px;
+}
 
 @keyframes fadeInUp {
   from {
@@ -1553,32 +1574,4 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.wish-list {
-  margin-top: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.wish-item {
-  background: #fff8fa;
-  border: 1px solid #f4c5d3;
-  border-radius: 10px;
-  padding: 12px 15px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  text-align: left;
-}
-
-.wish-item h4 {
-  margin: 0 0 5px 0;
-  font-size: 1.1rem;
-  color: #a34a6a;
-}
-
-.wish-item p {
-  margin: 0;
-  color: #4b2e2b;
-  font-size: 0.95rem;
 }
