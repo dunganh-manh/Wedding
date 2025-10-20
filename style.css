@@ -1467,3 +1467,32 @@ footer { background:#f7d9e3; color:#4b2e2b; padding:20px; font-size:0.9rem; }
   to { transform: scale(1); opacity: 1; }
 }
 
+
+.songhy {
+  font-size: 2.8rem;
+  color: #c75274;
+  opacity: 0;
+  text-shadow: 0 0 10px rgba(255, 192, 203, 0.6),
+               0 0 20px rgba(255, 182, 193, 0.4);
+  animation: fadeIn 2s ease forwards 1s, glow 3s ease-in-out infinite alternate;
+}
+
+/* hiện dần */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* phát sáng nhẹ liên tục */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 192, 203, 0.5),
+                 0 0 20px rgba(255, 182, 193, 0.3);
+  }
+  to {
+    text-shadow: 0 0 25px rgba(255, 182, 193, 1),
+                 0 0 45px rgba(255, 105, 180, 0.6);
+  }
+}
