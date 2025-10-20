@@ -166,14 +166,14 @@ lightbox.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
 const firebaseConfig = {
-  apiKey: "AIzaSyCFZ1zwjQo6KlXvo8WEbDXtExf8iQW_ZGo",
-  authDomain: "wedding-597fc.firebaseapp.com",
-  databaseURL: "https://wedding-597fc-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "wedding-597fc",
-  storageBucket: "wedding-597fc.firebasestorage.app",
-  messagingSenderId: "731212784041",
-  appId: "1:731212784041:web:002751645930bfeea4a4b8",
-  measurementId: "G-F1LLKT45LG"
+  apiKey: "AIzaSyDenkJA2mAK5UUiBDli5mt8CFUKjXMtmTQ",
+  authDomain: "wedding-wishes-3985c.firebaseapp.com",
+  databaseURL: "https://wedding-wishes-3985c-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "wedding-wishes-3985c",
+  storageBucket: "wedding-wishes-3985c.firebasestorage.app",
+  messagingSenderId: "391144044053",
+  appId: "1:391144044053:web:ec2399ba37eb7d0043801c",
+  measurementId: "G-TCNDCR3BHK"
 };
 
   firebase.initializeApp(firebaseConfig);
